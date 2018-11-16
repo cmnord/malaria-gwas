@@ -39,9 +39,7 @@ STEPS - GWAS Analysis
 -  Use bedtools or R to find the overlap of our Malaria SNPs with Liver epigentic data
 -  Use betdools or R to find overlap of background SNPs with Liver epigenetic data
 -  Calculate whether or not the difference is significant - p value, all that fun stats stuff
--  Repeat step 3-5 but with the RBC gene expression data
-  - first need to find out if the data we have is the raw expression data, or if it shows genes that are expressed only in RBCs
-  - This part we use with gene names, rather than locations, because of the nature of the data, so may be best done in R
+-  Repeat step 3-5 but with the RBC gene expression data( first need to find out if the data we have is the raw expression data, or if it shows genes that are expressed only in RBCs. This part we use with gene names, rather than locations, because of the nature of the data, so may be best done in R)
 -  Down the line, we can also use the DAVID database to look at pathways that are enriched <-- think about this later
 
 [usc]: http://hgdownload.cse.ucsc.edu/goldenPath/panPan2/bigZips/
