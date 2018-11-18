@@ -12,15 +12,14 @@ def get_parser():
 		help='Screening data with gene locations and strand. Include full filepath')
 	return parser
 
-
-if __name__ == '__main__':
+def snps_to_bed():
 	args = get_parser().parse_args()
-	print "FILENAME: " + args.f
+	print("FILENAME: " + args.f)
 	alldata = pd.read_csv(args.f)
 
 	e = args.f.find('.csv')
 	name = args.f[:e]
-	print 'BED FILE NAME IS: '+name+'.bed'
+	print('BED FILE NAME IS: '+name+'.bed')
 
 	with open(name+'.bed', 'w') as fi:
 		for guide in alldata.index:
@@ -29,5 +28,8 @@ if __name__ == '__main__':
 			SNP_name = alldata.loc[guide]['SNP']
 			chrom = alldata.loc[guide]['Chromosome']
 
-			full = '{}\t{}\t{}\t{}\n'.format(chrom, seq, end, SNP_name)
+			full = 'chr{}\t{}\t{}\t{}\n'.format(chrom, seq, end, SNP_name)
 			fi.write(full)
+
+if __name__ == '__main__':
+	snps_to_bed()
