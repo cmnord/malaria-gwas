@@ -9,19 +9,6 @@ BASE_URL = 'https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/na
 FILE_NAME = '{}-H3K27ac.narrowPeak.gz'
 
 
-def get_cell_types():
-    """
-    Docstring
-    """
-    cell_types = []
-    with open('epigenomic_annotations/cell_types.txt', 'r') as cell_file:
-        for line in cell_file:
-            # remove newline
-            cell_types.append(line[:-1])
-
-    return cell_types
-
-
 def main():
     """
     Docstring
