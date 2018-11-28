@@ -11,9 +11,39 @@ def get_num(elem):
             except:
                 continue 
 
-def create_df():
-    df = pd.read_csv("./data/epigenomic_overlaps.tsv", sep="\t", header = None)
-    df.columns = ['Cell Type', 'Chromosome', 'SNP Start', 'SNP End', 'SNP Name']
+def filter_cell_types(meta):
+    exluded_groups = {'iPSC'}
+    exluded_types = {'fetal', 'culture', 'carcinoma', 'leukemia'}
+
+    filtered_cell_types = []
+    types_to_check = meta['Epigenome ID (EID)'].values[2:]
+    groups_to_check = meta['GROUP'].values[2:]
+    descripts_to_check = meta['Standardized Epigenome name'].values[2:]
+
+    for i in range(len(types_to_check)):
+        valid = True
+        for word in exluded_groups: # filters by group
+            if word.lower() == groups_to_check[i].lower():
+                valid = False
+                break
+        if not valid:
+            continue
+        for word in exluded_types: # filters by keyword in name
+            if word.lower() in descripts_to_check[i].lower():
+                valid = False
+                break 
+        if valid:
+            filtered_cell_types.append(types_to_check[i])
+
+    return filtered_cell_types
+
+def create_df(filepath, columns=None):
+    df = pd.read_csv(filepath, sep="\t", header = None)
+    if columns == None: # make the first row the column headers
+        df.columns = list(df.ix[0])
+        df.drop([0], axis=0, inplace=True)
+    else:
+        df.columns = columns
     return df
 
 def create_dic(df):
@@ -82,36 +112,52 @@ def plot_enriched_snps(x_vals, y_vals, colors):
     plt.title('SNPs Within Enriched Epigenomic Regions', fontsize = 20)
 
     #plt.show()
-    plt.savefig('./SNPs_Within_Enriched_Epigenomic_Regions.png')
+    plt.savefig('./graph_results/SNPs_Within_Enriched_Epigenomic_Regions.png')
 
-def plot_malaria_cell_types(df):
+def plot_malaria_cell_types(df, meta):
+    meta_cell_types = list(meta['Epigenome ID (EID)'].values)
+
     counts = dict()
     cell_types = df['Cell Type'].values
+    filtered_cell_types = filter_cell_types(meta)
     for i in range(len(cell_types)):
         typ = cell_types[i]
-        if typ in counts:
-            counts[typ] += 1
-        else:
-            counts[typ] = 1
+        if typ in filtered_cell_types:
+            if typ in counts:
+                counts[typ] += 1
+            else:
+                counts[typ] = 1
 
-    x_vals = sorted(counts.keys(), key=get_num)
-    x_vals.sort(key=lambda cell_type: counts[cell_type])
+    x_vals = sorted(counts.keys(), key=get_num) # sort by epigenome name (ie: 'E003')
+    #x_vals.sort(key=lambda cell_type: counts[cell_type]) # sort by number of snps
+    #x_vals.sort(key=lambda cell_type: meta['GROUP'][meta_cell_types.index(cell_type)]) # sort by group name
     y_vals = [counts[key] for key in x_vals]
     plt.figure(figsize=(15,20))
-    plt.barh(list(reversed(range(len(y_vals)))), y_vals, tick_label=x_vals)
+
+    plt.barh(list(reversed(range(len(y_vals)))), y_vals, color=['red' if x == 'E066' else meta['COLOR'][meta_cell_types.index(x)] for x in x_vals], tick_label=x_vals)
+    
+    colors = dict()
+    for i in range(3, len(meta_cell_types)):
+        if meta['COLOR'][i] in colors.keys():
+            continue
+        else:
+            colors[meta['COLOR'][i]] = meta['GROUP'][i]
+    plt.legend(handles=[mpatches.Patch(color='red', label='Liver')] + [mpatches.Patch(color=key, label=colors[key]) for key in colors.keys()], loc=1)
 
     plt.ylabel('Cell Types', fontsize = 15)
     plt.xlabel('Number of Malaria SNPs', fontsize = 15)
     plt.title('Cell Types With Enriched Malaria SNPs', fontsize = 20)
 
     #plt.show()
-    plt.savefig('./Cell_Types_With_Enriched_Malaria_SNPs_[sorted].png')
+    plt.savefig('./graph_results/Cell_Types_With_Enriched_Malaria_SNPs_[groups].png')
 
 def main():
-    df = create_df()
+    df = create_df("./data/epigenomic_overlaps.tsv",['Cell Type', 'Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
+    meta = create_df("./data/roadmap_metadata.tsv")
+
     #x_vals,y_vals,colors = create_dic(df)
     #plot_enriched_snps(x_vals,y_vals,colors)
-    plot_malaria_cell_types(df)
+    plot_malaria_cell_types(df, meta)
 
 if __name__ == "__main__":
     main()
