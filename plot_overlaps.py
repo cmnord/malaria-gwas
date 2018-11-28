@@ -95,6 +95,7 @@ def plot_malaria_cell_types(df):
             counts[typ] = 1
 
     x_vals = sorted(counts.keys(), key=get_num)
+    x_vals.sort(key=lambda cell_type: counts[cell_type])
     y_vals = [counts[key] for key in x_vals]
     plt.figure(figsize=(15,20))
     plt.barh(list(reversed(range(len(y_vals)))), y_vals, tick_label=x_vals)
@@ -104,7 +105,7 @@ def plot_malaria_cell_types(df):
     plt.title('Cell Types With Enriched Malaria SNPs', fontsize = 20)
 
     #plt.show()
-    plt.savefig('./Cell_Types_With_Enriched_Malaria_SNPs.png')
+    plt.savefig('./Cell_Types_With_Enriched_Malaria_SNPs_[sorted].png')
 
 def main():
     df = create_df()
