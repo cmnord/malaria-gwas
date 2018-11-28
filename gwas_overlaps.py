@@ -1,13 +1,18 @@
 """
-Find overlaps between significant SNPs from malaria GWAS and
-1. The epigenomic state of different cell types (specifically H3K27 acetylation)
-2. The gene expression level of red blood cells
+Find overlaps between:
+1. Significant SNPs from malaria GWAS and
+    A. The epigenomic state of different cell types (specifically H3K27 acetylation)
+    B. The gene expression level of red blood cells
+2. Background SNPs and
+    A. The epigenomic state of different cell types (specifically H3K27 acetylation)
+    B. The gene expression level of red blood cells
 """
 import subprocess
 import os
 import pdb
 
-GWAS_FILE = 'data/gwas_associations/snps.bed'
+MALARIA_GWAS = 'data/gwas_associations/snps.bed'
+BACKGROUND_GWAS = 'data/gwas_associations/gwas_catalog_data.bed'
 ZIPFILE_EXTENSION = '.gz'
 
 
@@ -20,11 +25,10 @@ def get_cell_type(filename):
     return filename[:4]
 
 
-def calculate_acetylation_overlap():
+def acetylation_overlap(gwas_file, output_file):
     EPIGENOMIC_FOLDER = 'data/epigenomic_annotations/'
     epigenomic_files = sorted(os.listdir(EPIGENOMIC_FOLDER))
-    command = ['bedtools', 'intersect', '-a', GWAS_FILE, '-b']
-    output_file = 'data/epigenomic_overlaps.tsv'
+    command = ['bedtools', 'intersect', '-a', gwas_file, '-b']
     with open(output_file, 'w') as f:
         for filename in epigenomic_files:
             if is_zipped(filename):
@@ -44,17 +48,20 @@ def calculate_acetylation_overlap():
                 f.write('{}\t{}\n'.format(cell_type, line))
 
 
-def calculate_rbc_expression_overlap():
-    output_file = 'data/rbc_expression_overlaps.tsv'
+def rbc_expression_overlap(gwas_file, output_file):
     RBC_EXPRESSION_FILE = 'data/rbc_gene_expression/rbc_w_genes_locs.bed'
     with open(output_file, 'w') as f:
         out = subprocess.run(
-            ['bedtools', 'intersect', '-a', RBC_EXPRESSION_FILE, '-b', GWAS_FILE], stdout=subprocess.PIPE
+            ['bedtools', 'intersect', '-a', RBC_EXPRESSION_FILE, '-b', gwas_file], stdout=subprocess.PIPE
         )
         results = out.stdout.decode('utf-8').strip()
         f.write(results)
 
 
 if __name__ == "__main__":
-    # calculate_acetylation_overlap()
-    calculate_rbc_expression_overlap()
+    # acetylation_overlap(MALARIA_GWAS, 'data/malaria_acetylation_overlap.tsv')
+    # rbc_expression_overlap(MALARIA_GWAS, 'data/malaria_rbc_expression_overlap.tsv')
+    acetylation_overlap(
+        BACKGROUND_GWAS, 'data/background_acetylation_overlap.tsv')
+    rbc_expression_overlap(
+        BACKGROUND_GWAS, 'data/background_rbc_expression_overlap.tsv')
