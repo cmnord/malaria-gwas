@@ -3,6 +3,19 @@ from Bio.pairwise2 import format_alignment
 import sys
 import os
 
+if len(sys.argv) < 1:
+	print "you must call program as: python ps1-seqalign.py <directory with seqs>"
+	sys.exit(1)
+
+directory = sys.argv[1]
+print directory
+#file2 = sys.argv[2]
+
+dirr = os.getcwd()
+print dirr
+
+workingdir = dirr + '\\' + directory
+
 def read_fasta(fp):
     name, seq = None, []
     for line in fp:
@@ -25,9 +38,9 @@ reads2 = []
 names2 = []
 
 
-directory = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/protein'
+#directory = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/protein'
 
-for filename in os.listdir(directory):
+for filename in os.listdir(workingdir):
 	reads = []
 	names = []
 
@@ -38,19 +51,20 @@ for filename in os.listdir(directory):
 		#u2 = spec.find('_')
 		#spec = spec[:u2]
 
-		with open(filename) as fp:
+		with open(workingdir + '\\' + filename) as fp:
 		    for (name, seq) in read_fasta(fp):
 		        names.append(name)
 		        reads.append(seq)
 		fp.close()
 
-		with open(prot + '_all_primates.fa', 'a') as f3:
+		with open(workingdir + '\\' + prot + '_all_primates2.fa', 'a') as f3:
 			f3.write('>' + spec + '\n')
 			for read in reads:
 				f3.write(read)
+		f3.close()
 		continue
 
-for filename in os.listdir(directory):
+for filename in os.listdir(workingdir):
 	reads   = []
 	names   = []
 
@@ -62,7 +76,7 @@ for filename in os.listdir(directory):
 		#spec = spec[:u2]
 		if "homo_sapiens" in spec or "all_primates" in spec:
 			continue
-		with open(filename) as fp:
+		with open(workingdir + '\\' + filename) as fp:
 		    for (name, seq) in read_fasta(fp):
 		        names.append(name)
 		        reads.append(seq)
@@ -76,10 +90,11 @@ for filename in os.listdir(directory):
 		# 		f2.write('>' + spec + '\n')# + ' ' + names[1][1:])
 		# 		f2.write(reads[1] + '\n')
 		# f2.close()
-		with open(prot + '_all_primates.fa', 'a') as f3:
+		with open(workingdir + '\\' + prot + '_all_primates2.fa', 'a') as f3:
 			f3.write('\n' + '>' + spec + '\n')
 			for i in range(len(reads)):
 				f3.write(reads[i])
+		f3.close()
 
 
 # with open('band3_allseq_p1.fa') as fp:
