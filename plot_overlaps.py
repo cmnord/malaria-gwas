@@ -227,8 +227,11 @@ def main():
     add_SNP_names(blood, create_df("./data/snps.csv"))
     blood_back = create_df("./data/overlaps/background_rbc_expression_overlap.tsv",['Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
 
+    #finding how many cell types each malaria SNP is enriched in
     x_vals,y_vals,colors = create_dic(primary, blood)
     plot_enriched_snps(x_vals,y_vals,colors)
+
+    #finding how many enriched malaria SNPs (out of all enriched SNPs) are in each cell type
     plot_malaria_cell_types(primary, back, blood, blood_back, p_meta)
 
 if __name__ == "__main__":
