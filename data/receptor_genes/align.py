@@ -25,18 +25,18 @@ reads2 = []
 names2 = []
 
 
-directory = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/primates'
+directory = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/protein'
 
 for filename in os.listdir(directory):
 	reads = []
 	names = []
 
-	if "human1" in filename:
+	if "homo_sapiens" in filename:
 		u1 = filename.find('_')+1
 		prot = filename[:u1-1]
-		spec = filename[u1:]
-		u2 = spec.find('_')
-		spec = spec[:u2]
+		spec = filename[u1:-3]
+		#u2 = spec.find('_')
+		#spec = spec[:u2]
 
 		with open(filename) as fp:
 		    for (name, seq) in read_fasta(fp):
@@ -44,7 +44,7 @@ for filename in os.listdir(directory):
 		        reads.append(seq)
 		fp.close()
 
-		with open(prot + '_test3_full.fa', 'a') as f3:
+		with open(prot + '_all_primates.fa', 'a') as f3:
 			f3.write('>' + spec + '\n')
 			for read in reads:
 				f3.write(read)
@@ -54,13 +54,13 @@ for filename in os.listdir(directory):
 	reads   = []
 	names   = []
 
-	if filename.endswith("_coding.fa") and filename.startswith("tfr1"):
+	if filename.endswith(".fa") and filename.startswith("tfr1"):
 		u1 = filename.find('_')+1
 		prot = filename[:u1-1]
-		spec = filename[u1:]
-		u2 = spec.find('_')
-		spec = spec[:u2]
-		if "human" in spec:
+		spec = filename[u1:-3]
+		#u2 = spec.find('_')
+		#spec = spec[:u2]
+		if "homo_sapiens" in spec or "all_primates" in spec:
 			continue
 		with open(filename) as fp:
 		    for (name, seq) in read_fasta(fp):
@@ -76,7 +76,7 @@ for filename in os.listdir(directory):
 		# 		f2.write('>' + spec + '\n')# + ' ' + names[1][1:])
 		# 		f2.write(reads[1] + '\n')
 		# f2.close()
-		with open(prot + '_test3_full.fa', 'a') as f3:
+		with open(prot + '_all_primates.fa', 'a') as f3:
 			f3.write('\n' + '>' + spec + '\n')
 			for i in range(len(reads)):
 				f3.write(reads[i])
