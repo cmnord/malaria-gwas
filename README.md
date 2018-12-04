@@ -2,11 +2,11 @@
 
 [Proposal][proposal]
 
-Here is the user guide to MUSCLE with instructions on how to download: [http://www.drive5.com/muscle/muscle.html][MUSCLE] I used this to make the multiple alignments and phylogenetic trees.
+Here is the user guide to MUSCLE with instructions on how to download: [http://www.drive5.com/muscle/muscle.html] I used this to make the multiple alignments and phylogenetic trees.
 
-This website is useful for visualizing the alignments (muscle just spits out another fasta): [https://www.ebi.ac.uk/Tools/msa/mview/][EMBL-EBI]. 
+This website is useful for visualizing the alignments (muscle just spits out another fasta): [https://www.ebi.ac.uk/Tools/msa/mview/]. 
 
-And this is the tools that I used to make the phylogenetic trees: [http://evolution.genetics.washington.edu/phylip.html][PHYLIP]. I used the Drawtree Java app. 
+And this is the tools that I used to make the phylogenetic trees: [http://evolution.genetics.washington.edu/phylip.html]. I used the Drawtree Java app. 
 
 [Roadmap Epigenomics Project metadata][roadmap]
 
