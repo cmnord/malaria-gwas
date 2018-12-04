@@ -27,13 +27,6 @@ def read_fasta(fp):
             seq.append(line)
     if name: yield (name, ''.join(seq))
 
-#X = "ACGGGT"
-#Y = "ACG"
-
-# filename = sys.argv[1]
-# filename2 = sys.argv[2]
-# else:
-#     sys.exit("Usage: " + sys.argv[0] + " [fasta_filename]")
 reads2 = []
 names2 = []
 
@@ -72,8 +65,6 @@ for filename in os.listdir(workingdir):
 		u1 = filename.find('_')+1
 		prot = filename[:u1-1]
 		spec = filename[u1:-3]
-		#u2 = spec.find('_')
-		#spec = spec[:u2]
 		if "homo_sapiens" in spec or "all_primates" in spec:
 			continue
 		with open(workingdir + '\\' + filename) as fp:
@@ -81,34 +72,12 @@ for filename in os.listdir(workingdir):
 		        names.append(name)
 		        reads.append(seq)
 		fp.close()
-		# with open(prot + '_test2_p1_names.fa', 'a') as f:
-		# 	f.write('>' + spec + '\n')# + ' ' + names[0][1:])
-		# 	f.write(reads[0] + '\n')
-		# f.close()
-		# with open(prot + '_test2_p2_names.fa', 'a') as f2:
-		# 	if len(reads) >= 2:
-		# 		f2.write('>' + spec + '\n')# + ' ' + names[1][1:])
-		# 		f2.write(reads[1] + '\n')
-		# f2.close()
 		with open(workingdir + '\\' + prot + '_all_primates2.fa', 'a') as f3:
 			f3.write('\n' + '>' + spec + '\n')
 			for i in range(len(reads)):
 				f3.write(reads[i])
 		f3.close()
 
-
-# with open('band3_allseq_p1.fa') as fp:
-#     for(name, seq) in read_fasta(fp):
-#         names2.append(name)
-#         reads2.append(seq)
-# fp.close()
-
-
-# X = reads[0]
-# Y = reads2[0]
-
-# #print reads
-# #print names2
 
 # ### GLOBAL ALIGNMENTS -- all best
 # #alignments = pairwise2.align.globalxx(X,Y)
