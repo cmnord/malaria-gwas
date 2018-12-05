@@ -26,8 +26,7 @@ def read_fasta(fp):
 
 #filename = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/primates/tfr1_test3_full.afa'
 
-infected = ['pan_troglodytes', 'gorilla', 'pongo_abelii', 'homo_sapiens']
-sometimes_infected = ['aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
+infected = ['pan_troglodytes', 'gorilla', 'pongo_abelii', 'homo_sapiens', 'aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
 
 names = []
 reads = []
@@ -35,63 +34,60 @@ infected_reads = []
 infected_names = []
 nf_reads = []
 nf_names = []
-prim_order = []
 
-
-
+# read in the sequence, store the names and the corresponding reads
+# nothing done with this piece of code right now
 with open(filename) as fp:
     for (name, seq) in read_fasta(fp):
         names.append(name[1:])
         reads.append(seq)
         nn = False
-        for n in infected:
-        	if n in name:
-        		infected_names.append(name[1:])
-        		infected_reads.append(seq)
-        		prim_order.append(n)
-        		nn = True
+    	if name[1:] in infected:
+    		infected_names.append(name[1:])
+    		infected_reads.append(seq)
+    		nn = True
         if nn == False:
-    		nf_reads.append(seq)
     		nf_names.append(name[1:])
+    		nf_reads.append(seq)
 
 fp.close()
 
+# make a dataframe and csv file with the alignments
 reads2 = []
 for i in range(len(reads)):
 	reads2.append(list(reads[i]))
 aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1), index=names)
-aligndf.to_csv('tfr1/primates/tfr1_test3_alignment.csv')
+aligndf.to_csv(directory + '\\' + filename[:-4] + '_alignment.csv')
 print aligndf
 
-# #print reads[0]
-
-# nuc_dict = [None for i in range(len(reads[0]))]
+# aa_dict = [None for i in range(len(reads[0]))]
 # inf_dict = [None for i in range(len(reads[0]))]
 # nf_dict = [None for i in range(len(reads[0]))]
-# #print nuc_dict
-# nuc_count = []
-# inf_count = []
+
+# aa_count = []	# had the number of species containing the most common nucleotide
+# inf_count = []	# has the number of infected containing the msot common nucleotide
 # nf_count = []
-# nuc_max = []
+# aa_max = []
 # inf_max = []
 # nf_max = []
 
-# for i in range(len(nuc_dict)):
-# 	nuc_dict[i] = {}
+# # make a dictionary for each position and add all amino acids found at that position
+# for i in range(len(aa_dict)):
+# 	aa_dict[i] = {}
 # 	for seq in reads:
 # 		if seq[i] != '-':
-# 			if seq[i] not in nuc_dict[i]:
-# 				nuc_dict[i][seq[i]] = 1
+# 			if seq[i] not in aa_dict[i]:
+# 				aa_dict[i][seq[i]] = 1
 # 			else:
-# 				nuc_dict[i][seq[i]] += 1
+# 				aa_dict[i][seq[i]] += 1
 # 	maxNuc = None
 # 	maxCount = 0
-# 	for key in nuc_dict[i]:
-# 		if nuc_dict[i][key] > maxCount:
+# 	for key in aa_dict[i]:
+# 		if aa_dict[i][key] > maxCount:
 # 			maxNuc = key
-# 			maxCount = nuc_dict[i][key]
-# 	nuc_count.append(maxCount)
-# 	nuc_max.append(maxNuc)
+# 			maxCount = aa_dict[i][key]
+# 	aa_count.append(maxCount)
+# 	aa_max.append(maxNuc)
 
 # #which_prim = []
 
@@ -131,12 +127,12 @@ print aligndf
 # 	nf_count.append(maxCount)
 # 	nf_max.append(maxNuc)
 
-# assert len(nuc_count) == len(inf_count)
+# assert len(aa_count) == len(inf_count)
 
-# compare = np.column_stack((nuc_count, inf_count, nf_count, nuc_max, inf_max, nf_max))
+# compare = np.column_stack((aa_count, inf_count, nf_count, aa_max, inf_max, nf_max))
 # print compare
 
-# headers = [i for i in range(len(nuc_count))]
+# headers = [i for i in range(len(aa_count))]
 
 # compdf = pd.DataFrame(compare, columns=['all', 'inf', 'not_inf', 'all_nuc', 'inf_nuc', 'not_inf_nuc'])
 # print compdf
