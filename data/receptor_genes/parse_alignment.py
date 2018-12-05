@@ -37,6 +37,8 @@ nf_names = []
 
 # read in the sequence, store the names and the corresponding reads
 # nothing done with this piece of code right now
+# maybe want to find sequences where all nucleotides are identical
+# - these
 with open(filename) as fp:
     for (name, seq) in read_fasta(fp):
         names.append(name[1:])
@@ -52,13 +54,43 @@ with open(filename) as fp:
 
 fp.close()
 
+inf_matrix = []
+for i in range(len(infected_reads)):
+	inf_matrix.append(list(infected_reads[i]))
+
+inf_r_np = np.array(inf_matrix)
+inf_r_np_t = inf_r_np.transpose()
+
+unique_inf = []
+for i in range(len(inf_r_np_t)):
+	unique_inf.append(np.unique(inf_r_np_t[i]))
+unique_inf = np.array(unique_inf)
+#unique_inf = np.unique(inf_r_np_t)
+ident = []
+print inf_r_np
+print inf_r_np_t
+print len(inf_r_np_t)
+#print unique_inf
+
+# find sequences in infected species that are identical
+for i in range(len(unique_inf)):
+	if len(unique_inf[i]) == 1 and unique_inf[i] != '-':
+		ident.append(1)
+	else:
+		ident.append(0)
+
+print ident
+print len(ident)
+
+
 # make a dataframe and csv file with the alignments
-reads2 = []
-for i in range(len(reads)):
-	reads2.append(list(reads[i]))
-aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1), index=names)
-aligndf.to_csv(directory + '\\' + filename[:-4] + '_alignment.csv')
-print aligndf
+def make_alignment_csv():
+	reads2 = []
+	for i in range(len(reads)):
+		reads2.append(list(reads[i]))
+	aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1), index=names)
+	aligndf.to_csv(directory + '\\' + filename[:-4] + '_alignment.csv')
+	print aligndf
 
 # aa_dict = [None for i in range(len(reads[0]))]
 # inf_dict = [None for i in range(len(reads[0]))]
