@@ -2,11 +2,11 @@
 
 [Proposal][proposal]
 
-Here is the user guide to MUSCLE with instructions on how to download: [http://www.drive5.com/muscle/muscle.html] I used this to make the multiple alignments and phylogenetic trees.
+[User guide][muscle] to MUSCLE with instructions on how to download. I used this to make the multiple alignments and phylogenetic trees.
 
-This website is useful for visualizing the alignments (muscle just spits out another fasta): [https://www.ebi.ac.uk/Tools/msa/mview/].
+[This website][muscleviz] is useful for visualizing the alignments (muscle just spits out another fasta).
 
-And this is the tools that I used to make the phylogenetic trees: [http://evolution.genetics.washington.edu/phylip.html]. I used the Drawtree Java app.
+[Tools][drawtree] to make the phylogenetic trees: I used the Drawtree Java app.
 
 [Roadmap Epigenomics Project metadata][roadmap]
 
@@ -78,3 +78,6 @@ STEPS - GWAS Analysis
 [proposal]: https://docs.google.com/document/d/1F0Ke9Pjggio1-GSsk4dtYaaRajI1zjJQ_VCiW0mkeaQ/edit#
 [usc]: http://hgdownload.cse.ucsc.edu/goldenPath/panPan2/bigZips/
 [roadmap]: https://docs.google.com/spreadsheets/d/1yikGx4MsO9Ei36b64yOy9Vb6oPC5IBGlFbYEt-N6gOM/edit#gid=15
+[muscle]: http://www.drive5.com/muscle/muscle.html
+[muscleviz]: https://www.ebi.ac.uk/Tools/msa/mview/
+[drawtree]: http://evolution.genetics.washington.edu/phylip.html
