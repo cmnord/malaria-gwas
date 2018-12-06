@@ -41,13 +41,13 @@ Non-human primates: download from [here][usc]:
 | Papio anubis              | Baboon (olive)           |
 | Pilicolorbus tephrosceles | Ugandan red colobus      |
 | **Pongo alebii**          | Orangutan                |
-| Proboscis monkey          | aj                       |
 | Rhinopithecus roxellana   | Golden snub-nosed monkey |
 | **Saimiri boliviensis**   | Squirrel monkey          |
 | ?                         | Bushbaby                 |
 | ?                         | Denisova                 |
 | ?                         | Green Monkey             |
 | ?                         | Marmoset                 |
+| ?                         | Proboscis monkey         |
 | ?                         | Tarsier                  |
 
 DATA - GWAS Analysis
