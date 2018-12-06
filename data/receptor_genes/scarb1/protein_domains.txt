@@ -50,3 +50,10 @@ Cercocebys Atys
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="462" loc="M"/>
 		<Region from="463" to="553" loc="I"/>
+Cebus Capucinus
+	<Topology numTM="2" reliability="96.973">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="88" loc="M"/>
+		<Region from="89" to="503" loc="O"/>
+		<Region from="504" to="519" loc="M"/>
+		<Region from="520" to="566" loc="I"/>
