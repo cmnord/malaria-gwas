@@ -4,13 +4,14 @@
 
 Here is the user guide to MUSCLE with instructions on how to download: [http://www.drive5.com/muscle/muscle.html] I used this to make the multiple alignments and phylogenetic trees.
 
-This website is useful for visualizing the alignments (muscle just spits out another fasta): [https://www.ebi.ac.uk/Tools/msa/mview/]. 
+This website is useful for visualizing the alignments (muscle just spits out another fasta): [https://www.ebi.ac.uk/Tools/msa/mview/].
 
-And this is the tools that I used to make the phylogenetic trees: [http://evolution.genetics.washington.edu/phylip.html]. I used the Drawtree Java app. 
+And this is the tools that I used to make the phylogenetic trees: [http://evolution.genetics.washington.edu/phylip.html]. I used the Drawtree Java app.
 
 [Roadmap Epigenomics Project metadata][roadmap]
 
 INFECTED PRIMATES:
+
 -   Homo Sapiens (human)
 -   Pan Troglodytes (chimp)
 -   Gorilla ... duh
@@ -19,23 +20,35 @@ INFECTED PRIMATES:
 -   Pongo abelii (orangutan) <-- I think one of them has another Pongo, another orangutan species
 
 Non-human primates: download from [here][usc]:
+**Bolded** primates are infected by malaria.
 
--   Baboon
--   Bonobo
--   Bushbaby
--   Chimpanzee
--   Crab eating macaque
--   Denisova
--   Gibbon
--   Golden snub-nosed monkey
--   Gorilla
--   Green Monkey
--   Marmoset
--   Orangutan
--   Proboscis monkey
--   Rhesus macaque
--   Squirrel monkey
--   Tarsier
+| Scientific name           | Common name              |
+| ------------------------- | ------------------------ |
+| Papio anubis              | Baboon (olive)           |
+| Pan paniscus              | Bonobo                   |
+| Mandrillus leucophaeus    | Drill                    |
+| Cebus capuchinus imitator | Capuchin monkey          |
+| Callithrix jacchus        | Common marmoset          |
+| Galveopterus variegatus   | Malayan flying lemur     |
+| Chlorocebus aethiops      | Grivet                   |
+| ?                         | Bushbaby                 |
+| **Pan troglodytes**       | Chimpanzee               |
+| Macaca fascularis         | Crab eating macaque      |
+| ?                         | Denisova                 |
+| Nomascus leucogenys       | Gibbon                   |
+| Rhinopithecus roxellana   | Golden snub-nosed monkey |
+| Pilicolorbus tephrosceles | Ugandan red colobus      |
+| Cercocebus atys           | Sooty mangabey           |
+| **Gorilla**               | Gorilla gorilla          |
+| ?                         | Green Monkey             |
+| ?                         | Marmoset                 |
+| **Pongo alebii**          | Orangutan                |
+| Proboscis monkey          | aj                       |
+| Macaca mulatta            | Rhesus macaque           |
+| **Saimiri boliviensis**   | Squirrel monkey          |
+| **Aotus trivirgatus**     | Night monkey             |
+| **Aotus nancymaae**       | Nancy Ma's night monkey  |
+| ?                         | Tarsier                  |
 
 DATA - GWAS Analysis
 
