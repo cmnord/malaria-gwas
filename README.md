@@ -10,6 +10,14 @@ And this is the tools that I used to make the phylogenetic trees: [http://evolut
 
 [Roadmap Epigenomics Project metadata][roadmap]
 
+INFECTED PRIMATES:
+-   Homo Sapiens (human)
+-   Pan Troglodytes (chimp)
+-   Gorilla ... duh
+-   Aotus
+-   Saimiri
+-   Pongo abelii (orangutan) <-- I think one of them has another Pongo, another orangutan species
+
 Non-human primates: download from [here][usc]:
 
 -   Baboon
