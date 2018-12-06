@@ -1,0 +1,52 @@
+Homo Sapiens
+	<Topology numTM="2" reliability="95.4695">
+		<Region from="1" to="11" loc="I"/>
+		<Region from="12" to="32" loc="M"/>
+		<Region from="33" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="509" loc="I"/>
+Gorilla
+	<Topology numTM="2" reliability="93.7154">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="31" loc="M"/>
+		<Region from="32" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="553" loc="I"/>
+Pan Troglodytes
+	<Topology numTM="2" reliability="96.6452">
+		<Region from="1" to="11" loc="I"/>
+		<Region from="12" to="32" loc="M"/>
+		<Region from="33" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="553" loc="I"/>
+Pan Paniscus
+	<Topology numTM="1" reliability="92.7983">
+		<Region from="1" to="412" loc="O"/>
+		<Region from="413" to="430" loc="M"/>
+		<Region from="431" to="519" loc="I"/>
+Papio Anubis
+	<Topology numTM="1" reliability="57.631">
+		<Region from="1" to="453" loc="O"/>
+		<Region from="454" to="475" loc="M"/>
+		<Region from="476" to="564" loc="I"/>
+Pongo Alebii
+	<Topology numTM="2" reliability="95.7243">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="31" loc="M"/>
+		<Region from="32" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="553" loc="I"/>
+Aotus Nancymaae
+	<Topology numTM="2" reliability="93.7919">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="32" loc="M"/>
+		<Region from="33" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="509" loc="I"/>
+Cercocebys Atys
+	<Topology numTM="2" reliability="95.477">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="31" loc="M"/>
+		<Region from="32" to="446" loc="O"/>
+		<Region from="447" to="462" loc="M"/>
+		<Region from="463" to="553" loc="I"/>

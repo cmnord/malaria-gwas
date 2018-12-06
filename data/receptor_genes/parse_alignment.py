@@ -54,72 +54,162 @@ with open(filename) as fp:
 
 fp.close()
 
-inf_matrix = []
-for i in range(len(infected_reads)):
-	inf_matrix.append(list(infected_reads[i]))
+def find_identical_subsequences(reads):
+	read_matrix = []
+	for i in range(len(reads)):
+		read_matrix.append(list(reads[i]))
 
-inf_r_np = np.array(inf_matrix)
-inf_r_np_t = inf_r_np.transpose()
+	reads_np = np.array(read_matrix)
+	reads_np_t = reads_np.transpose()
 
-unique_inf = []
-for i in range(len(inf_r_np_t)):
-	unique_inf.append(np.unique(inf_r_np_t[i]))
-unique_inf = np.array(unique_inf)
-#unique_inf = np.unique(inf_r_np_t)
-ident = []
-print inf_r_np
-print inf_r_np_t
-print len(inf_r_np_t)
-#print unique_inf
+	unique = []
+	for i in range(len(reads_np_t)):
+		unique.append(np.unique(reads_np_t[i]))
+	unique = np.array(unique)
+	ident = []
+	# print reads_np
+	# print reads_np_t
+	# print len(reads_np_t)
+	# print unique
 
-# find sequences in infected species that are identical
-for i in range(len(unique_inf)):
-	if len(unique_inf[i]) == 1 and unique_inf[i] != '-':
-		ident.append(1)
-	else:
-		ident.append(0)
+	# find sequences in infected species that are identical
+	for i in range(len(unique)):
+		if len(unique[i]) == 1 and unique[i] != '-':
+			ident.append(1)
+		else:
+			ident.append(0)
 
-print ident
-print len(ident)
-
+	return ident
 
 # make a dataframe and csv file with the alignments
-def make_alignment_csv():
+# endname is something like '_alignments.csv' or whatever you want the file to end with
+# m_file is true of false, depending on if you want a csv file
+def make_alignment_csv(reads, endname, m_file):
 	reads2 = []
 	for i in range(len(reads)):
 		reads2.append(list(reads[i]))
-	aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1), index=names)
-	aligndf.to_csv(directory + '\\' + filename[:-4] + '_alignment.csv')
-	print aligndf
+	if m_file == True:
+		aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1))
+		aligndf.to_csv(os.path.join(directory,filename[:-4]) + endname)
+	return reads2
 
-# aa_dict = [None for i in range(len(reads[0]))]
-# inf_dict = [None for i in range(len(reads[0]))]
-# nf_dict = [None for i in range(len(reads[0]))]
 
-# aa_count = []	# had the number of species containing the most common nucleotide
-# inf_count = []	# has the number of infected containing the msot common nucleotide
-# nf_count = []
-# aa_max = []
-# inf_max = []
-# nf_max = []
+all_ident = find_identical_subsequences(reads)
+inf_ident = find_identical_subsequences(infected_reads)
+res_ident = find_identical_subsequences(nf_reads)
+ident_list = [all_ident, inf_ident, res_ident]
+# print ident_list
+# ident_matrix = np.array(make_alignment_csv(ident_list, '_identical.csv', False))
 
-# # make a dictionary for each position and add all amino acids found at that position
-# for i in range(len(aa_dict)):
-# 	aa_dict[i] = {}
-# 	for seq in reads:
-# 		if seq[i] != '-':
-# 			if seq[i] not in aa_dict[i]:
-# 				aa_dict[i][seq[i]] = 1
-# 			else:
-# 				aa_dict[i][seq[i]] += 1
-# 	maxNuc = None
-# 	maxCount = 0
-# 	for key in aa_dict[i]:
-# 		if aa_dict[i][key] > maxCount:
-# 			maxNuc = key
-# 			maxCount = aa_dict[i][key]
-# 	aa_count.append(maxCount)
-# 	aa_max.append(maxNuc)
+# find all sequences of 1's
+def find_conserved_seqs(seqs):
+	pairs = []
+	i = 1
+	prev = seqs[0]
+	if prev == 1:
+		tup = [0, None]
+	else:
+		tup = [None, None]
+	while i < len(seqs):
+		if seqs[i] == 1 and prev == 1:
+			prev = 1
+			i+=1
+		elif seqs[i] == 1 and prev == 0 :
+			tup = [i, None]
+			prev = 1
+			i+=1
+		elif seqs[i] == 0 and prev == 1:
+			tup[1] = i-1
+			if tup[1]-tup[0] <= 5:
+				pass
+			else:
+				pairs.append(tup)
+			tup = [None, None]
+			i+=1
+			prev = 0
+		else:
+			tup = [None, None]
+			prev = 0
+			i+=1
+	return pairs
+
+inf_pairs = find_conserved_seqs(inf_ident)
+res_pairs = find_conserved_seqs(res_ident)
+all_pairs = find_conserved_seqs(all_ident)
+print inf_pairs
+print res_pairs
+print all_pairs
+
+# find parts that are similarly conserved between two species
+# donn'''ttttt think this acutally says anything significant.
+# will probably need to compare the conserved parts among infected species
+#	with each other species independently. for each animal that doens't 
+#	get infected by vivax, we could align it with the consensus alignment,
+#	or the sequences that are completely conserved in the infected primates
+#	
+def find_overlaps(pairs1, pairs2):
+	overlaps = []
+	if len(pairs1) < len(pairs2):
+		first = pairs2
+		second = pairs1
+	else:
+		first = pairs1
+		second = pairs2
+	for i in range(len(first)):
+		pair1 = first[i]
+		for j in range(len(second)):
+			pair2 = second[j]
+			if pair2[0] in range(pair1[0]-2, pair1[1]) and pair2[1] in range(pair1[0], pair1[1]+2):
+				overlaps.append([pair1, pair2])
+			elif pair1[0] in range(pair2[0]-2, pair2[1]) and pair1[1] in range(pair2[0], pair2[1]+2):
+				overlaps.append([pair1, pair2])
+			elif pair2[1] < pair1[0]:
+				pass
+			elif pair2[0] > pair1[1]:
+				continue
+	return overlaps
+
+inf_all_overlaps = find_overlaps(inf_pairs, all_pairs)
+print np.array(inf_all_overlaps)
+
+
+
+	# inf_dict = [None for i in range(len(reads[0]))]
+	# nf_dict = [None for i in range(len(reads[0]))]
+	# inf_count = []	# has the number of infected containing the msot common nucleotide
+	# nf_count = []
+	# inf_max = []
+	# nf_max = []
+
+
+
+def count_identical(specs):
+	# takes in a list of lists of alignments
+	# calculates the number of aa's in each position that are the same
+	# finds the most common nucleotide for each position
+
+	specs_dict = [None for i in range(len(reads[0]))]
+
+	aa_count = []	# has the number of species containing the most common nucleotide
+	aa_max = []		# has the nucleotide that is most frequently seen
+
+	# make a dictionary for each position and add all amino acids found at that position
+	for i in range(len(specs_dict)):
+		specs_dict[i] = {}
+		for seq in specs:
+			if seq[i] != '-':
+				if seq[i] not in specs_dict[i]:
+					specs_dict[i][seq[i]] = 1
+				else:
+					specs_dict[i][seq[i]] += 1
+		maxNuc = None
+		maxCount = 0
+		for key in specs_dict[i]:
+			if specs_dict[i][key] > maxCount:
+				maxNuc = key
+				maxCount = specs_dict[i][key]
+		aa_count.append(maxCount)
+		aa_max.append(maxNuc)
 
 # #which_prim = []
 

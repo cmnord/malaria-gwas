@@ -12,6 +12,7 @@ print(directory)
 dirr = os.getcwd()
 print(dirr)
 
+
 workingdir = os.path.join(dirr, directory)
 
 
