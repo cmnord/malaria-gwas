@@ -1,113 +1,113 @@
-Homo Sapiens
+homo_sapiens
 	<Topology numTM="2" reliability="95.4695">
 		<Region from="1" to="11" loc="I"/>
 		<Region from="12" to="32" loc="M"/>
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="509" loc="I"/>
-Gorilla
+gorilla
 	<Topology numTM="2" reliability="93.7154">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="553" loc="I"/>
-Pan Troglodytes
+pan_troglodytes
 	<Topology numTM="2" reliability="96.6452">
 		<Region from="1" to="11" loc="I"/>
 		<Region from="12" to="32" loc="M"/>
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="553" loc="I"/>
-Pan Paniscus
+pan_paniscus
 	<Topology numTM="1" reliability="92.7983">
 		<Region from="1" to="412" loc="O"/>
 		<Region from="413" to="430" loc="M"/>
 		<Region from="431" to="519" loc="I"/>
-Papio Anubis
+papio_anubis
 	<Topology numTM="1" reliability="57.631">
 		<Region from="1" to="453" loc="O"/>
 		<Region from="454" to="475" loc="M"/>
 		<Region from="476" to="564" loc="I"/>
-Pongo Alebii
+pongo_abelii
 	<Topology numTM="2" reliability="95.7243">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="553" loc="I"/>
-Aotus Nancymaae
+aotus_nancymaae
 	<Topology numTM="2" reliability="93.7919">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="32" loc="M"/>
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="509" loc="I"/>
-Cercocebys Atys
+cercocebus_atys
 	<Topology numTM="2" reliability="95.477">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="462" loc="M"/>
 		<Region from="463" to="553" loc="I"/>
-Cebus Capucinus
+cebus_capucinus
 	<Topology numTM="2" reliability="96.973">
 		<Region from="1" to="65" loc="I"/>
 		<Region from="66" to="88" loc="M"/>
 		<Region from="89" to="503" loc="O"/>
 		<Region from="504" to="519" loc="M"/>
 		<Region from="520" to="566" loc="I"/>
-Chlorocebus Sabaeus
+chlorocebus_sabaeus
 	<Topology numTM="2" reliability="89.7452">
 		<Region from="1" to="101" loc="I"/>
 		<Region from="102" to="124" loc="M"/>
 		<Region from="125" to="535" loc="O"/>
 		<Region from="536" to="554" loc="M"/>
 		<Region from="555" to="601" loc="I"/>
-Galeopterus Variegatus
+galeopterus_variegatus
 	<Topology numTM="2" reliability="95.9029">
 		<Region from="1" to="11" loc="I"/>
 		<Region from="12" to="32" loc="M"/>
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="462" loc="M"/>
 		<Region from="463" to="509" loc="I"/>
-Macaca Mulatta
+macaca_mulatta
 	<Topology numTM="1" reliability="69.2146">
 		<Region from="1" to="451" loc="O"/>
 		<Region from="452" to="472" loc="M"/>
 		<Region from="473" to="561" loc="I"/>
-Macaca Nemestrina
+macaca_nemestrina
 	<Topology numTM="1" reliability="69.8886">
 		<Region from="1" to="437" loc="O"/>
 		<Region from="438" to="459" loc="M"/>
 		<Region from="460" to="550" loc="I"/>
-Mandrillus Leucophaeus
+mandrillus_leucophaeus
 	<Topology numTM="1" reliability="93.4736">
 		<Region from="1" to="411" loc="O"/>
 		<Region from="412" to="429" loc="M"/>
 		<Region from="430" to="471" loc="I"/>
-Nomascus Leucogenys
+nomascus_leucogenys
 	<Topology numTM="2" reliability="95.8252">
 		<Region from="1" to="11" loc="I"/>
 		<Region from="12" to="32" loc="M"/>
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="553" loc="I"/>
-Rhinopithecus Roxellana
+rhinopithecus_roxellana
 	<Topology numTM="2" reliability="94.906">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="462" loc="M"/>
 		<Region from="463" to="553" loc="I"/>
-Saimiri Boliviensis
+saimiri_boliviensis
 	<Topology numTM="2" reliability="95.4083">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>
 		<Region from="32" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="509" loc="I"/>
-Theropithecus Gelada
+theropithecus_gelada
 	<Topology numTM="1" reliability="91.837">
 		<Region from="1" to="405" loc="O"/>
 		<Region from="406" to="421" loc="M"/>
