@@ -57,3 +57,58 @@ Cebus Capucinus
 		<Region from="89" to="503" loc="O"/>
 		<Region from="504" to="519" loc="M"/>
 		<Region from="520" to="566" loc="I"/>
+Chlorocebus Sabaeus
+	<Topology numTM="2" reliability="89.7452">
+		<Region from="1" to="101" loc="I"/>
+		<Region from="102" to="124" loc="M"/>
+		<Region from="125" to="535" loc="O"/>
+		<Region from="536" to="554" loc="M"/>
+		<Region from="555" to="601" loc="I"/>
+Galeopterus Variegatus
+	<Topology numTM="2" reliability="95.9029">
+		<Region from="1" to="11" loc="I"/>
+		<Region from="12" to="32" loc="M"/>
+		<Region from="33" to="446" loc="O"/>
+		<Region from="447" to="462" loc="M"/>
+		<Region from="463" to="509" loc="I"/>
+Macaca Mulatta
+	<Topology numTM="1" reliability="69.2146">
+		<Region from="1" to="451" loc="O"/>
+		<Region from="452" to="472" loc="M"/>
+		<Region from="473" to="561" loc="I"/>
+Macaca Nemestrina
+	<Topology numTM="1" reliability="69.8886">
+		<Region from="1" to="437" loc="O"/>
+		<Region from="438" to="459" loc="M"/>
+		<Region from="460" to="550" loc="I"/>
+Mandrillus Leucophaeus
+	<Topology numTM="1" reliability="93.4736">
+		<Region from="1" to="411" loc="O"/>
+		<Region from="412" to="429" loc="M"/>
+		<Region from="430" to="471" loc="I"/>
+Nomascus Leucogenys
+	<Topology numTM="2" reliability="95.8252">
+		<Region from="1" to="11" loc="I"/>
+		<Region from="12" to="32" loc="M"/>
+		<Region from="33" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="553" loc="I"/>
+Rhinopithecus Roxellana
+	<Topology numTM="2" reliability="94.906">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="31" loc="M"/>
+		<Region from="32" to="446" loc="O"/>
+		<Region from="447" to="462" loc="M"/>
+		<Region from="463" to="553" loc="I"/>
+Saimiri Boliviensis
+	<Topology numTM="2" reliability="95.4083">
+		<Region from="1" to="9" loc="I"/>
+		<Region from="10" to="31" loc="M"/>
+		<Region from="32" to="446" loc="O"/>
+		<Region from="447" to="464" loc="M"/>
+		<Region from="465" to="509" loc="I"/>
+Theropithecus Gelada
+	<Topology numTM="1" reliability="91.837">
+		<Region from="1" to="405" loc="O"/>
+		<Region from="406" to="421" loc="M"/>
+		<Region from="422" to="512" loc="I"/>
