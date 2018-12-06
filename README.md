@@ -24,30 +24,30 @@ Non-human primates: download from [here][usc]:
 
 | Scientific name           | Common name              |
 | ------------------------- | ------------------------ |
-| Papio anubis              | Baboon (olive)           |
-| Pan paniscus              | Bonobo                   |
-| Mandrillus leucophaeus    | Drill                    |
-| Cebus capuchinus imitator | Capuchin monkey          |
+| **Aotus nancymaae**       | Nancy Ma's night monkey  |
+| **Aotus trivirgatus**     | Night monkey             |
 | Callithrix jacchus        | Common marmoset          |
-| Galveopterus variegatus   | Malayan flying lemur     |
-| Chlorocebus aethiops      | Grivet                   |
-| ?                         | Bushbaby                 |
-| **Pan troglodytes**       | Chimpanzee               |
-| Macaca fascularis         | Crab eating macaque      |
-| ?                         | Denisova                 |
-| Nomascus leucogenys       | Gibbon                   |
-| Rhinopithecus roxellana   | Golden snub-nosed monkey |
-| Pilicolorbus tephrosceles | Ugandan red colobus      |
+| Cebus capuchinus imitator | Capuchin monkey          |
 | Cercocebus atys           | Sooty mangabey           |
+| Chlorocebus aethiops      | Grivet                   |
+| Galveopterus variegatus   | Malayan flying lemur     |
 | **Gorilla**               | Gorilla gorilla          |
-| ?                         | Green Monkey             |
-| ?                         | Marmoset                 |
+| Macaca fascularis         | Crab eating macaque      |
+| Macaca mulatta            | Rhesus macaque           |
+| Mandrillus leucophaeus    | Drill                    |
+| Nomascus leucogenys       | Gibbon                   |
+| Pan paniscus              | Bonobo                   |
+| **Pan troglodytes**       | Chimpanzee               |
+| Papio anubis              | Baboon (olive)           |
+| Pilicolorbus tephrosceles | Ugandan red colobus      |
 | **Pongo alebii**          | Orangutan                |
 | Proboscis monkey          | aj                       |
-| Macaca mulatta            | Rhesus macaque           |
+| Rhinopithecus roxellana   | Golden snub-nosed monkey |
 | **Saimiri boliviensis**   | Squirrel monkey          |
-| **Aotus trivirgatus**     | Night monkey             |
-| **Aotus nancymaae**       | Nancy Ma's night monkey  |
+| ?                         | Bushbaby                 |
+| ?                         | Denisova                 |
+| ?                         | Green Monkey             |
+| ?                         | Marmoset                 |
 | ?                         | Tarsier                  |
 
 DATA - GWAS Analysis
