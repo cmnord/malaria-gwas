@@ -1,0 +1,25 @@
+                                cov    pid  1 [        .         .   ] 24
+ 1 saimiri_boliviensis       100.0% 100.0%    ----SKLLLLPTCLAQQVLDLLLN   
+ 2 cebus_capucinus           100.0%  83.3%    FLVRSKLLLLPTCLAQQVLDLLLN   
+ 3 aotus_nancymaae           100.0% 100.0%    ----SKLLLLPTCLAQQVLDLLLN   
+ 4 callithrix_jacchus        100.0%  95.0%    ----SKLLLLPTCLAQQVLDLVLN   
+ 5 homo_sapiens              100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+ 6 mandrillus_leucophaeus    100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+ 7 macaca_fascicularis       100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+ 8 rhinopithecus_roxellana   100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+ 9 rhinopithecus_bieti       100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+10 piliocolobus_tephrosceles 100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+11 cercocebus_atys           100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+12 gorilla_gorilla           100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+13 theropithecus_gelada      100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+14 macaca_mulatta            100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+15 pan_paniscus              100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+16 pongo_abelii              100.0%  90.0%    ----SKLLLLSTCLAQQALDLLLN   
+17 colobus_angolensi         100.0%  85.7%    ---RSKLLLLSTCLAQQALDLLLN   
+18 papio_anubis              100.0%  85.7%    ---RSKLLLLSTCLAQQALDLLLN   
+19 macaca_nemestrina         100.0%  85.7%    ---RSKLLLLSTCLAQQALDLLLN   
+20 pan_troglodytes           100.0%  85.0%    ----SNLLLLSTCLAQQALDLLLN   
+   consensus/100%                             ....SpLLLLsTCLAQQsLDLlLN   
+   consensus/90%                              ....SKLLLLsTCLAQQsLDLLLN   
+   consensus/80%                              ....SKLLLLSTCLAQQALDLLLN   
+   consensus/70%                              ....SKLLLLSTCLAQQALDLLLN   

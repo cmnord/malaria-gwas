@@ -1,0 +1,25 @@
+                                cov    pid  1 [        .         ] 20
+ 1 gorilla_gorilla           100.0% 100.0%    SGASGGLCTPIHSTELKALQ   
+ 2 homo_sapiens               95.0%  89.5%    -GASGGLCTLIYSTELKALQ   
+ 3 pan_troglodytes           100.0%  90.0%    SGASGGLCTLIYSTELKALQ   
+ 4 pan_paniscus              100.0%  90.0%    SGASGGLCTLIYSTELKALQ   
+ 5 pongo_abelii              100.0%  90.0%    SGASGGLCTLIYSTELKALQ   
+ 6 aotus_nancymaae           100.0%  90.0%    SGGSDGLCTPIHSTELKALQ   
+ 7 saimiri_boliviensis       100.0%  90.0%    SGASDGLCTPIYSTELKALQ   
+ 8 callithrix_jacchus        100.0%  85.0%    SDASDGLCTPIYSTELKALQ   
+ 9 cebus_capucinus            95.0%  84.2%    -GASDGLCTPIYSMELKALQ   
+10 mandrillus_leucophaeus    100.0%  85.0%    SGASGGLCTPVYSMELKALQ   
+11 macaca_fascicularis       100.0%  85.0%    SGASGGLCTPVYSMELKALQ   
+12 cercocebus_atys           100.0%  85.0%    SGASGGLCTPVYSMELKALQ   
+13 theropithecus_gelada      100.0%  85.0%    SGASGGLCTPVYSMELKALQ   
+14 macaca_mulatta            100.0%  85.0%    SGASGGLCTPVYSMELKALQ   
+15 papio_anubis               95.0%  84.2%    -GASGGLCTPVYSMELKALQ   
+16 macaca_nemestrina          95.0%  84.2%    -GASGGLCTPVYSMELKALQ   
+17 rhinopithecus_roxellana   100.0%  90.0%    SGASGGLCTPIYSMELKALQ   
+18 rhinopithecus_bieti       100.0%  90.0%    SGASGGLCTPIYSMELKALQ   
+19 piliocolobus_tephrosceles 100.0%  90.0%    SGASGGLCTPIYSMELKALQ   
+20 colobus_angolensi         100.0%  90.0%    SGASGGLCTPIYSMELKALQ   
+   consensus/100%                             .suSsGLCT.laShELKALQ   
+   consensus/90%                              .GASsGLCT.lYShELKALQ   
+   consensus/80%                              SGASGGLCTPlYShELKALQ   
+   consensus/70%                              SGASGGLCTPlYShELKALQ   

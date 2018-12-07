@@ -1,0 +1,25 @@
+                                cov    pid  1 [        .   ] 14
+ 1 gorilla_gorilla           100.0% 100.0%    GLGSTHSSALCS--   
+ 2 saimiri_boliviensis       100.0%  91.7%    GLGNTHSSALCS--   
+ 3 macaca_fascicularis        91.7%  75.0%    -LGNTRSSALCSL-   
+ 4 mandrillus_leucophaeus    100.0%  83.3%    GLGNTRSSALCS--   
+ 5 callithrix_jacchus        100.0%  83.3%    GLGNTRSSALCS--   
+ 6 cercocebus_atys           100.0%  83.3%    GLGNTRSSALCS--   
+ 7 cebus_capucinus           100.0%  83.3%    GLGNTRSSALCS--   
+ 8 aotus_nancymaae            66.7%  75.0%    -LGNTRSSA-----   
+ 9 theropithecus_gelada      100.0%  83.3%    GLGNTRSSALCS--   
+10 macaca_mulatta            100.0%  83.3%    GLGNTRSSALCS--   
+11 papio_anubis              100.0%  71.4%    GLGNTRSSALCSLG   
+12 macaca_nemestrina         100.0%  71.4%    GLGNTRSSALCSLG   
+13 colobus_angolensi         100.0%  84.6%    GLGSTRSSALCSL-   
+14 pongo_abelii               83.3%  75.0%    --GSTRSSALCSLG   
+15 homo_sapiens               91.7%  76.9%    -LGSTRSSALCSLG   
+16 rhinopithecus_roxellana    91.7%  83.3%    -LGSTRSSALCSL-   
+17 rhinopithecus_bieti        91.7%  76.9%    -LGSTRSSALCSLG   
+18 piliocolobus_tephrosceles  91.7%  83.3%    -LGSTRSSALCSL-   
+19 pan_troglodytes            91.7%  76.9%    -LGSTRSSALCSLG   
+20 pan_paniscus               91.7%  76.9%    -LGSTRSSALCSLG   
+   consensus/100%                             ..GsT+SSA.....   
+   consensus/90%                              .LGsTRSSALCS..   
+   consensus/80%                              .LGsTRSSALCS..   
+   consensus/70%                              .LGsTRSSALCS..   

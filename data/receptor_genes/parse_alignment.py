@@ -5,6 +5,48 @@ import os
 import numpy as np
 import pandas as pd
 
+blosum = {"A":['A', 'C', 'G', 'S', 'T', 'V'],
+			"R":['N', 'R', 'Q', 'E', 'H', 'K'],
+			"N":['R', 'N', 'D', 'Q', 'E', 'G', 'H', 'K', 'S', 'T'],
+			"D":['N', 'D', 'Q', 'E', 'S'],
+			"C":['A', 'C'],
+			"Q":['R', 'N', 'D', 'Q', 'E', 'H', 'K', 'M', 'S'],
+			"E":['R', 'N', 'D', 'Q', 'E', 'H', 'K', 'S'],
+			"G":['A', 'N', 'G', 'S'],
+			"H":['R', 'N', 'Q', 'E', 'H', 'Y'],
+			"I":['I', 'L', 'M', 'F', 'V'],
+			"L":['I', 'L', 'M', 'F', 'V'],
+			"K":['R', 'N', 'Q', 'E', 'K', 'S'],
+			"M":['Q', 'I', 'L', 'M', 'F', 'V'],
+			"F":['I', 'L', 'M', 'F', 'W', 'Y'],
+			"P":['P'],
+			"S":['A', 'N', 'D', 'Q', 'E', 'G', 'K', 'S', 'T'],
+			"T":['A','N', 'S', 'T', 'V'],
+			"W":['F', 'W', 'Y'],
+			"Y":['H', 'F', 'W', 'Y'],
+			"V":['A', 'I', 'L', 'M', 'T', 'V']}
+
+blosum2 = {"A":['A','S'],
+			"R":['R', 'Q', 'K'],
+			"N":['N', 'D', 'S'],
+			"D":['N', 'D','E'],
+			"C":['C'],
+			"Q":['R', 'Q', 'E', 'K'],
+			"E":['D', 'Q', 'E','K'],
+			"G":['G'],
+			"H":['N', 'H', 'Y'],
+			"I":['I', 'L', 'M', 'V'],
+			"L":['I', 'L', 'M', 'V'],
+			"K":['R', 'Q', 'E', 'K'],
+			"M":['I', 'L', 'M', 'V'],
+			"F":['F', 'W', 'Y'],
+			"P":['P'],
+			"S":['A', 'N', 'S', 'T'],
+			"T":['S', 'T'],
+			"W":['F', 'W', 'Y'],
+			"Y":['H', 'F', 'W', 'Y'],
+			"V":['I', 'L', 'M', 'V']}
+
 if len(sys.argv) < 1:
 	print "you must call program as: python parse_alignments.py <alignment.afa>"
 	sys.exit(1)
@@ -26,7 +68,7 @@ def read_fasta(fp):
 
 #filename = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/primates/tfr1_test3_full.afa'
 
-infected = ['pan_troglodytes', 'gorilla', 'pongo_abelii', 'homo_sapiens', 'aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
+infected = ['pan_troglodytes', 'gorilla_gorilla', 'pongo_abelii', 'homo_sapiens', 'aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
 
 names = []
 reads = []
@@ -54,7 +96,7 @@ with open(filename) as fp:
 
 fp.close()
 
-def find_identical_subsequences(reads):
+def find_identical_subsequences(reads, use_blosum = False):
 	read_matrix = []
 	for i in range(len(reads)):
 		read_matrix.append(list(reads[i]))
@@ -67,17 +109,25 @@ def find_identical_subsequences(reads):
 		unique.append(np.unique(reads_np_t[i]))
 	unique = np.array(unique)
 	ident = []
-	# print reads_np
-	# print reads_np_t
-	# print len(reads_np_t)
-	# print unique
-
 	# find sequences in infected species that are identical
 	for i in range(len(unique)):
-		if len(unique[i]) == 1 and unique[i] != '-':
+		if len(unique[i]) == 1:
 			ident.append(1)
 		else:
-			ident.append(0)
+			if use_blosum == True:
+				cons = True
+				for j in range(len(reads_np_t[i])):
+					for k in range(len(reads_np_t[i])):
+						if reads_np_t[i][k] == '-' or reads_np_t[i][j] == '-':
+							cons = False
+						elif reads_np_t[i][k] not in blosum2[reads_np_t[i][j]]:
+							cons = False
+				if cons == True:
+					ident.append(1)
+				else:
+					ident.append(0)
+			else:
+				ident.append(0)
 
 	return ident
 
@@ -98,8 +148,15 @@ all_ident = find_identical_subsequences(reads)
 inf_ident = find_identical_subsequences(infected_reads)
 res_ident = find_identical_subsequences(nf_reads)
 ident_list = [all_ident, inf_ident, res_ident]
+
+all_identB = find_identical_subsequences(reads, True)
+inf_identB = find_identical_subsequences(infected_reads, True)
+res_identB = find_identical_subsequences(nf_reads, True)
+ident_listB = [all_identB, inf_identB, res_identB]
+
 # print ident_list
-# ident_matrix = np.array(make_alignment_csv(ident_list, '_identical.csv', False))
+ident_matrix = np.array(make_alignment_csv(ident_list, '_b2_identical.csv', False))
+
 
 # find all sequences of 1's
 def find_conserved_seqs(seqs):
@@ -140,6 +197,11 @@ print inf_pairs
 print res_pairs
 print all_pairs
 
+inf_pairsB = find_conserved_seqs(inf_identB)
+res_pairsB = find_conserved_seqs(res_identB)
+all_pairsB = find_conserved_seqs(all_identB)
+
+
 # find parts that are similarly conserved between two species
 # donn'''ttttt think this acutally says anything significant.
 # will probably need to compare the conserved parts among infected species
@@ -170,7 +232,16 @@ def find_overlaps(pairs1, pairs2):
 	return overlaps
 
 inf_all_overlaps = find_overlaps(inf_pairs, all_pairs)
+inf_all_overlapsB = find_overlaps(inf_pairsB, all_pairsB)
 print np.array(inf_all_overlaps)
+print np.array(inf_all_overlapsB)
+
+# for l in inf_all_overlaps:
+# 	print infected_reads[0][l[0][0]:l[0][1]]
+# 	print 
+
+# for i in range(len(infected_reads[0])):
+# 	if 
 
 
 

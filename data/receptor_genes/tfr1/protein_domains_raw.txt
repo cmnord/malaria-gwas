@@ -1,0 +1,97 @@
+aotus_nancymaae
+	<Topology numTM="1" reliability="99.251">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="571" loc="O"/>
+aotus_trivirgatus
+	<Topology numTM="1" reliability="98.5404">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+callithrix_jacchus
+	<Topology numTM="1" reliability="99.4161">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+cebus_capucinus_imitator
+	<Topology numTM="1" reliability="99.4936">
+		<Region from="1" to="64" loc="I"/>
+		<Region from="65" to="85" loc="M"/>
+		<Region from="86" to="759" loc="O"/>
+cercocebus_atys
+	<NO TRANSMEMBRANE DOMAIN!>
+chlorocebus_aethiops
+	<Topology numTM="1" reliability="98.5719">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+galeopterus_variegatus
+	<Topology numTM="1" reliability="99.6043">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+gorilla_gorilla
+	<Topology numTM="1" reliability="99.5507">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+homo_sapiens
+	<Topology numTM="1" reliability="98.5718">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+macaca_fascicularis
+	<NO TRANSMEMBRANE DOMAIN!>
+macaca_mulatta
+	<Topology numTM="1" reliability="99.5504">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+mandrillus_leucophaeus
+	<Topology numTM="3" reliability="88.8035">
+		<Region from="1" to="130" loc="I"/>
+		<Region from="131" to="146" loc="M"/>
+		<Region from="147" to="264" loc="O"/>
+		<Region from="265" to="280" loc="M"/>
+		<Region from="281" to="539" loc="I"/>
+		<Region from="540" to="555" loc="M"/>
+		<Region from="556" to="679" loc="O"/>
+nomascus_leucogenys
+	<Topology numTM="1" reliability="96.579">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="721" loc="O"/>
+pan_paniscus
+	<Topology numTM="1" reliability="98.5664">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+pan_troglodytes
+	<Topology numTM="1" reliability="98.5664">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+papio_anubis
+		<Region from="1" to="60" loc="I"/>
+		<Region from="61" to="82" loc="M"/>
+		<Region from="83" to="755" loc="O"/>
+pilicolobus_tephrosceles
+	<Topology numTM="1" reliability="98.5718">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="760" loc="O"/>
+pongo_abelii
+	<Topology numTM="1" reliability="98.5815">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+rhonopithecus_roxellana
+	<Topology numTM="1" reliability="99.5365">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="86" loc="M"/>
+		<Region from="87" to="760" loc="O"/>
+saimiri_boliviensis
+	<Topology numTM="1" reliability="99.2579">
+		<Region from="1" to="65" loc="I"/>
+		<Region from="66" to="87" loc="M"/>
+		<Region from="88" to="736" loc="O"/>

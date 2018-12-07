@@ -1,0 +1,25 @@
+                                cov    pid   1 [        .         .         .         .         :         .         .         .         .         1         .         . ] 122 
+ 1 cebus_capucinus           100.0% 100.0%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWDFPYNGNDSFPEINYDASLEAAAPCYSCNLLDDSSLP    
+ 2 saimiri_boliviensis       100.0%  88.7%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWNFSYNGNDSFPEIDYDASLAAAAPCHSCSLLNDSSLP    
+ 3 callithrix_jacchus        100.0%  91.9%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWNFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP    
+ 4 aotus_nancymaae           100.0%  91.9%     ------------------------------------------------------------GNCLQQAELSPSTENSSQLNLEDLWDFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP    
+ 5 homo_sapiens              100.0%  65.6%     ----------------------------------------------------------ASSGYVLQAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYGANLEAAAPCHSCNLLDDSALP    
+ 6 colobus_angolensi         100.0%  70.3%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+ 7 mandrillus_leucophaeus    100.0%  71.9%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+ 8 theropithecus_gelada       96.8%  71.0%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
+ 9 macaca_fascicularis        96.8%  77.0%     ------------------------------------------------------------GNCLHPAELSPSTQNSSQLNS-DLWNYSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSAL-    
+10 macaca_nemestrina         100.0%  40.2%     ETPSTPPWRASPDTTRQNSLSSPFMLSLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNYSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+11 macaca_mulatta             95.2%  78.3%     ------------------------------------------------------------GNCLHPAELSPSTQNSSQLNS-DLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
+12 cercocebus_atys           100.0%  41.0%     ETPSTPPWRASPDTTRQNSLSSPFMLSLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+13 papio_anubis              100.0%  41.0%     ETPSTPPWRASPDTTRQNSLSSPFMLSLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+14 piliocolobus_tephrosceles 100.0%  77.4%     ------------------------------------------------------------GNCLHPVELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+15 rhinopithecus_roxellana   100.0%  79.0%     ------------------------------------------------------------GNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+16 rhinopithecus_bieti       100.0%  40.2%     ETPSTPPWRASPDTTRPNSLSSPFMLNLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+17 gorilla_gorilla           100.0%  74.2%     ------------------------------------------------------------GNCLHTAELSPSTENSSQLDFEDAWNSSYDVNYSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+18 pongo_abelii               96.8%  80.0%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDLWNFSYGGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
+19 pan_troglodytes            98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
+20 pan_paniscus               98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
+   consensus/100%                              ............................................................ushl..sELSPSTpNSSQLs..DhWs.sY.sN.SFP-hsYsAsLtAAAPCaSCsLLsDSu..    
+   consensus/90%                               ............................................................ushlh.AELSPSTpNSSQLs.EDlWN.SY.sNDSFP-hDYDAsLEAAAPCHSCNLLDDSu..    
+   consensus/80%                               ............................................................GNCLp.AELSPSTpNSSQLs.EDLWN.SYsGNDSFPDlDYDANLEAAAPCHSCNLLDDSAL.    
+   consensus/70%                               ............................................................GNCLH.AELSPSTpNSSQLN.EDLWN.SYsGNDSFPDlDYDANLEAAAPCHSCNLLDDSALP  

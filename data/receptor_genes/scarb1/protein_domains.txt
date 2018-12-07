@@ -5,7 +5,7 @@ homo_sapiens
 		<Region from="33" to="446" loc="O"/>
 		<Region from="447" to="464" loc="M"/>
 		<Region from="465" to="509" loc="I"/>
-gorilla
+gorilla_gorilla
 	<Topology numTM="2" reliability="93.7154">
 		<Region from="1" to="9" loc="I"/>
 		<Region from="10" to="31" loc="M"/>

@@ -11,7 +11,8 @@ if len(sys.argv) < 2:
 
 filename = sys.argv[1]
 sequences = sys.argv[2]
-
+p = sequences.find('\\')
+protein = sequences[:p]
 directory = os.getcwd()
 
 def read_fasta(fp):
@@ -73,7 +74,7 @@ with open(filename) as fp:
 	dstats, domains = read_domains(fp)
 fp.close()
 
-
+#print domains
 
 
 def make_outer_domain_fasta(domains, sequences):
@@ -89,20 +90,51 @@ def make_outer_domain_fasta(domains, sequences):
 	for i in range(len(names)):
 		header = '>' + names[i]
 		newfile.append(header)
-		try:
-			outer_domains = domains[names[i]]["O"]
-			seq = list(reads[i])[int(outer_domains[0][0]):int(outer_domains[0][1])]
-			newfile.append("".join(seq))
-		except: pass
+		#try:
+		print names[i]
+		outer_domains = domains[names[i]]["O"]
+		o_d = []
+		for j in range(len(outer_domains)):
+			seq = list(reads[i])[int(outer_domains[j][0]):int(outer_domains[j][1])]
+			o_d.append("".join(seq))
+		newfile.append(o_d)
+		#except: pass
 	return new_filename, newfile
 
 new_filename, newfile = make_outer_domain_fasta(domains, sequences)
-with open(new_filename, 'w') as f:
-	for line in newfile:
-		f.write(line + '\n')
 
+for i in range(len(newfile[1])):
+	with open(new_filename[:-3]+str(i+1)+new_filename[-3:] , 'w') as f:
+		for line in newfile:
+			if line[0] == '>':
+				f.write(line + '\n')
+			else:
+				f.write(line[i] + '\n')
 
+#print newfile
 
+# make a folder with individual documents containing the human, and comparison sequence
+# HUMAN_SEQ = None
+# folder = "pairwise"
+# f1 = os.path.join(protein, folder)
+# path = os.path.join(directory, f1)
+# for i in range(len(newfile)):
+# 	if newfile[i] == ">homo_sapiens":
+# 		HUMAN_SEQ = newfile[i+1]
+# 		break
+# print HUMAN_SEQ
+
+# for i in range(len(newfile)):
+# 	if newfile[i] != ">homo_sapiens" and newfile[i] != "" and newfile[i][0] == ">":
+# 		if newfile[i+1] == "":
+# 			continue
+# 		print newfile[i]
+# 		fn = "hs_" + newfile[i][1:] + ".fa"
+# 		with open(os.path.join(path,fn), 'w') as f:
+# 			f.write(">homo_sapiens\n")
+# 			f.write(HUMAN_SEQ + '\n')
+# 			f.write(newfile[i]+'\n')
+# 			f.write(newfile[i+1])
 
     #for (name, seq) in read_fasta(fp):
 	 #    names.append(name[1:])
