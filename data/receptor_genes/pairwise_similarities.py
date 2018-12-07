@@ -106,3 +106,12 @@ if __name__ == "__main__":
 
 	for key in ident_dict:
 		print key, ident_dict[key]
+
+
+fn = os.path.join(directory, filename[:-4])
+with open(fn+'.txt', 'w') as f:
+	for key in ident_dict:
+		f.write(key + '\t')
+		for el in list(ident_dict[key]):
+			f.write(str(el)+'\t')
+		f.write('\n')

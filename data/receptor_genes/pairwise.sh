@@ -9,7 +9,7 @@ done
 mkdir duffy/outer/pairwise1
 python2 make_pairwise_fastas.py "duffy/outer/duffy_all_primates_outer1.fa"
 
-######## for doing pairwise alighments and putting all the results in the same file
+######## for doing pairwise alighments
 ########----------------------------------------------------------------------------
 
 for file in duffy/outer/pairwise1/*
