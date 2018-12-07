@@ -68,7 +68,7 @@ def read_fasta(fp):
 
 #filename = 'C:/Users/Kari/Documents/MIT/Senior/Fall 2018/6.047/malaria-gwas/data/receptor_genes/tfr1/primates/tfr1_test3_full.afa'
 
-infected = ['pan_troglodytes', 'gorilla_gorilla', 'pongo_abelii', 'homo_sapiens', 'aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
+infected = ['pan_troglodytes', 'gorilla_gorilla', 'pongo_abelii', 'pongo_pygmaeus', 'homo_sapiens', 'aotus_nancymaae', 'aotus trivirgatus', 'saimiri_boliviensis']
 
 names = []
 reads = []
@@ -96,6 +96,7 @@ with open(filename) as fp:
 
 fp.close()
 
+# make sequence of ones and zeros to show sequences identical across species
 def find_identical_subsequences(reads, use_blosum = False):
 	read_matrix = []
 	for i in range(len(reads)):
@@ -139,7 +140,7 @@ def make_alignment_csv(reads, endname, m_file):
 	for i in range(len(reads)):
 		reads2.append(list(reads[i]))
 	if m_file == True:
-		aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1))
+		aligndf = pd.DataFrame(reads2, columns=range(1,len(reads[0])+1), index=["all_primates", "infected", "resistant"])
 		aligndf.to_csv(os.path.join(directory,filename[:-4]) + endname)
 	return reads2
 
@@ -155,7 +156,8 @@ res_identB = find_identical_subsequences(nf_reads, True)
 ident_listB = [all_identB, inf_identB, res_identB]
 
 # print ident_list
-ident_matrix = np.array(make_alignment_csv(ident_list, '_b2_identical.csv', False))
+ident_matrix = np.array(make_alignment_csv(ident_list, '_identical.csv', True))
+ident_matrixB = np.array(make_alignment_csv(ident_listB, '_b2_identical.csv', True))
 
 
 # find all sequences of 1's

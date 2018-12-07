@@ -69,15 +69,15 @@ def read_domains(domains):
 
 	return dstats, p_doms
 
-
+# read in the protein_domains file and find the sequences in heac domain
 with open(filename) as fp:
 	dstats, domains = read_domains(fp)
 fp.close()
 
 #print domains
 
-
-def make_outer_domain_fasta(domains, sequences):
+# makes list that hass all domans, to be used for multiple alignment for each of the outer domains
+def make_outer_domain_fasta_array(domains, sequences):
 	names = []
 	reads = []
 	with open(sequences) as f:
@@ -101,49 +101,41 @@ def make_outer_domain_fasta(domains, sequences):
 		#except: pass
 	return new_filename, newfile
 
-new_filename, newfile = make_outer_domain_fasta(domains, sequences)
+new_filename, newfile = make_outer_domain_fasta_array(domains, sequences)
 
-for i in range(len(newfile[1])):
-	with open(new_filename[:-3]+str(i+1)+new_filename[-3:] , 'w') as f:
-		for line in newfile:
-			if line[0] == '>':
-				f.write(line + '\n')
-			else:
-				f.write(line[i] + '\n')
+# make new multiple alignment fastas for each outer domain
+def make_ma_fasta(newfile, new_filename):
+	for i in range(len(newfile[1])):
+		with open(new_filename[:-3]+str(i+1)+new_filename[-3:] , 'w') as f:
+			for line in newfile:
+				if line[0] == '>':
+					f.write(line + '\n')
+				else:
+					f.write(line[i] + '\n')
+#make_ma_fasta(newfile, new_filename)
 
-#print newfile
+#make a folder with individual documents containing the human, and comparison sequence
+def make_pairwise_fastas(protein, newfile):
+	HUMAN_SEQ = None
+	folder = "pairwise1"
+	f1 = os.path.join(protein, folder)
+	path = os.path.join(directory, f1)
+	for i in range(len(newfile)):
+		if newfile[i] == ">homo_sapiens":
+			HUMAN_SEQ = newfile[i+1]
+			break
+	print HUMAN_SEQ
 
-# make a folder with individual documents containing the human, and comparison sequence
-# HUMAN_SEQ = None
-# folder = "pairwise"
-# f1 = os.path.join(protein, folder)
-# path = os.path.join(directory, f1)
-# for i in range(len(newfile)):
-# 	if newfile[i] == ">homo_sapiens":
-# 		HUMAN_SEQ = newfile[i+1]
-# 		break
-# print HUMAN_SEQ
+	for i in range(len(newfile)):
+		if newfile[i] != ">homo_sapiens" and newfile[i] != "" and newfile[i][0] == ">":
+			if newfile[i+1] == "":
+				continue
+			print newfile[i]
+			fn = "hs_" + newfile[i][1:] + ".fa"
+			with open(os.path.join(path,fn), 'w') as f:
+				f.write(">homo_sapiens\n")
+				f.write(HUMAN_SEQ + '\n')
+				f.write(newfile[i]+'\n')
+				f.write(newfile[i+1])
 
-# for i in range(len(newfile)):
-# 	if newfile[i] != ">homo_sapiens" and newfile[i] != "" and newfile[i][0] == ">":
-# 		if newfile[i+1] == "":
-# 			continue
-# 		print newfile[i]
-# 		fn = "hs_" + newfile[i][1:] + ".fa"
-# 		with open(os.path.join(path,fn), 'w') as f:
-# 			f.write(">homo_sapiens\n")
-# 			f.write(HUMAN_SEQ + '\n')
-# 			f.write(newfile[i]+'\n')
-# 			f.write(newfile[i+1])
-
-    #for (name, seq) in read_fasta(fp):
-	 #    names.append(name[1:])
-	 #    reads.append(seq)
-	 #    nn = False
-		# if name[1:] in infected:
-		# 	infected_names.append(name[1:])
-		# 	infected_reads.append(seq)
-		# 	nn = True
-	 #    if nn == False:
-		# 	nf_names.append(name[1:])
-		# 	nf_reads.append(seq)
+make_pairwise_fastas(protein, newfile)

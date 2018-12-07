@@ -1,9 +1,16 @@
                                 cov    pid   1 [        .         .         .         .         :         .         .         .         .         1         .         . ] 122 
- 1 cebus_capucinus           100.0% 100.0%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWDFPYNGNDSFPEINYDASLEAAAPCYSCNLLDDSSLP    
- 2 saimiri_boliviensis       100.0%  88.7%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWNFSYNGNDSFPEIDYDASLAAAAPCHSCSLLNDSSLP    
+ 5 homo_sapiens              100.0%  65.6%     ----------------------------------------------------------ASSGYVLQAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYGANLEAAAPCHSCNLLDDSALP 
+19 pan_troglodytes            98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
+17 gorilla_gorilla           100.0%  74.2%     ------------------------------------------------------------GNCLHTAELSPSTENSSQLDFEDAWNSSYDVNYSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+18 pongo_abelii               96.8%  80.0%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDLWNFSYGGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
+ 2 saimiri_boliviensis       100.0%  88.7%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWNFSYNGNDSFPEIDYDASLAAAAPCHSCSLLNDSSLP
+ 4 aotus_nancymaae           100.0%  91.9%     ------------------------------------------------------------GNCLQQAELSPSTENSSQLNLEDLWDFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP 
+15 rhinopithecus_roxellana   100.0%  79.0%     ------------------------------------------------------------GNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+16 rhinopithecus_bieti       100.0%  40.2%     ETPSTPPWRASPDTTRPNSLSSPFMLNLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
+20 pan_paniscus               98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
+ 1 cebus_capucinus           100.0% 100.0%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWDFPYNGNDSFPEINYDASLEAAAPCYSCNLLDDSSLP        
  3 callithrix_jacchus        100.0%  91.9%     ------------------------------------------------------------GNCLHQAELSPSTENSSQLNLEDLWNFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP    
- 4 aotus_nancymaae           100.0%  91.9%     ------------------------------------------------------------GNCLQQAELSPSTENSSQLNLEDLWDFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP    
- 5 homo_sapiens              100.0%  65.6%     ----------------------------------------------------------ASSGYVLQAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYGANLEAAAPCHSCNLLDDSALP    
+ 4 aotus_nancymaae           100.0%  91.9%     ------------------------------------------------------------GNCLQQAELSPSTENSSQLNLEDLWDFSYDGNDSFPEIDYDASLEAAAPCHSCNLLDDSSLP        
  6 colobus_angolensi         100.0%  70.3%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
  7 mandrillus_leucophaeus    100.0%  71.9%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
  8 theropithecus_gelada       96.8%  71.0%     ----------------------------------------------------------ASSGYVLQAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
@@ -13,12 +20,6 @@
 12 cercocebus_atys           100.0%  41.0%     ETPSTPPWRASPDTTRQNSLSSPFMLSLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
 13 papio_anubis              100.0%  41.0%     ETPSTPPWRASPDTTRQNSLSSPFMLSLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNFSYDGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
 14 piliocolobus_tephrosceles 100.0%  77.4%     ------------------------------------------------------------GNCLHPVELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
-15 rhinopithecus_roxellana   100.0%  79.0%     ------------------------------------------------------------GNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
-16 rhinopithecus_bieti       100.0%  40.2%     ETPSTPPWRASPDTTRPNSLSSPFMLNLKLELVSGEKRGKSLRGADSRPSPSVCEPNGAMGNCLHPAELSPSTQNSSQLNSEDLWNSSYYGNDSFPDVDYDANLEAAAPCHSCNLLDDSALP    
-17 gorilla_gorilla           100.0%  74.2%     ------------------------------------------------------------GNCLHTAELSPSTENSSQLDFEDAWNSSYDVNYSFPDVDYDANLEAAAPCHSCNLLDDSALP    
-18 pongo_abelii               96.8%  80.0%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDLWNFSYGGNDSFPDVDYDANLEAAAPCHSCNLLDDSA--    
-19 pan_troglodytes            98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
-20 pan_paniscus               98.4%  75.4%     ------------------------------------------------------------GNCLHRAELSPSTENSSQLDFEDVWNSSYGVNDSFPDGDYDANLEAAAPCHSCNLLDDSAL-    
    consensus/100%                              ............................................................ushl..sELSPSTpNSSQLs..DhWs.sY.sN.SFP-hsYsAsLtAAAPCaSCsLLsDSu..    
    consensus/90%                               ............................................................ushlh.AELSPSTpNSSQLs.EDlWN.SY.sNDSFP-hDYDAsLEAAAPCHSCNLLDDSu..    
    consensus/80%                               ............................................................GNCLp.AELSPSTpNSSQLs.EDLWN.SYsGNDSFPDlDYDANLEAAAPCHSCNLLDDSAL.    
