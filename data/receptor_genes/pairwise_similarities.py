@@ -84,7 +84,7 @@ def find_identical_subsequences(reads, use_blosum = False):
 
 if __name__ == "__main__":
 	if len(sys.argv) < 1:
-		print "you must call program as: python parse_alignments.py <alignment.afa>"
+		print "you must call program as: python pairwise_similarities.py <alignment.afa>"
 		sys.exit(1)
 
 	filename = sys.argv[1]
@@ -97,12 +97,17 @@ if __name__ == "__main__":
 	        reads.append(seq)
 	fp.close()
 
+	HUMAN = None
 	ident_dict = {}
-
-	for i in range(0, len(names), 2):
-		compare = [reads[i],reads[i+1]]
-		n = [names[i],names[i+1]]
-		ident_dict[n[1]] = find_identical_subsequences(compare, True)
+	# find human sequences
+	for i in range(len(names)):
+		if names[i] == "homo_sapiens":
+			HUMAN = reads[i]
+	for i in range(len(names)):
+		if names[i] != "homo_sapiens":
+			compare = [HUMAN,reads[i]]
+			n = ["homo_sapiens",names[i]]
+			ident_dict[n[1]] = find_identical_subsequences(compare, True)
 
 	for key in ident_dict:
 		print key, ident_dict[key]
