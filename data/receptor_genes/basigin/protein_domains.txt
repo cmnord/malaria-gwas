@@ -1,0 +1,111 @@
+homo_sapiens
+	<Topology numTM="1" reliability="96.7349">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="206" loc="O"/>
+		<Region from="207" to="228" loc="M"/>
+		<Region from="229" to="269" loc="I"/>
+aotus_nancymaae
+	<Topology numTM="1" reliability="96.7673">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="206" loc="O"/>
+		<Region from="207" to="228" loc="M"/>
+		<Region from="229" to="269" loc="I"/>
+aotus_trivirgatus
+	<Topology numTM="1" reliability="96.5671">
+		<Region from="1" to="197" loc="O"/>
+		<Region from="198" to="219" loc="M"/>
+		<Region from="220" to="256" loc="I"/>
+callithrix_jacchus
+	<Topology numTM="1" reliability="96.6368">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="206" loc="O"/>
+		<Region from="207" to="228" loc="M"/>
+		<Region from="229" to="274" loc="I"/>
+cercocebus_atys
+	<Topology numTM="2" reliability="98.0158">
+		<Region from="1" to="52" loc="I"/>
+		<Region from="53" to="72" loc="M"/>
+		<Region from="73" to="264" loc="O"/>
+		<Region from="265" to="285" loc="M"/>
+		<Region from="286" to="326" loc="I"/>
+chlorocebus_sabaeus
+	<Topology numTM="1" reliability="95.7554">
+		<Region from="1" to="21" loc="S"/>
+		<Region from="22" to="322" loc="O"/>
+		<Region from="323" to="344" loc="M"/>
+		<Region from="345" to="385" loc="I"/>
+colobus_angolensis
+	<Topology numTM="1" reliability="85.1573">
+		<Region from="1" to="310" loc="O"/>
+		<Region from="311" to="332" loc="M"/>
+		<Region from="333" to="373" loc="I"/>
+gorilla_gorilla
+	<Topology numTM="1" reliability="96.7059">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="207" loc="O"/>
+		<Region from="208" to="229" loc="M"/>
+		<Region from="230" to="270" loc="I"/>
+macaca_fascicularis
+	<Topology numTM="1" reliability="96.739">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="210" loc="O"/>
+		<Region from="211" to="232" loc="M"/>
+		<Region from="233" to="273" loc="I"/>
+macaca_mulatta
+	<Topology numTM="1" reliability="96.739">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="210" loc="O"/>
+		<Region from="211" to="232" loc="M"/>
+		<Region from="233" to="273" loc="I"/>
+mandrillus_leucophaeus
+	<Topology numTM="1" reliability="97.3339">
+		<Region from="1" to="309" loc="O"/>
+		<Region from="310" to="330" loc="M"/>
+		<Region from="331" to="371" loc="I"/>
+pan_paniscus
+	<Topology numTM="1" reliability="96.8747">
+		<Region from="1" to="227" loc="O"/>
+		<Region from="228" to="249" loc="M"/>
+		<Region from="250" to="290" loc="I"/>
+pan_troglodytes
+	<Topology numTM="1" reliability="96.6951">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="206" loc="O"/>
+		<Region from="207" to="228" loc="M"/>
+		<Region from="229" to="269" loc="I"/>
+papio_anubis
+	<Topology numTM="2" reliability="89.4076">
+		<Region from="1" to="57" loc="I"/>
+		<Region from="58" to="73" loc="M"/>
+		<Region from="74" to="263" loc="O"/>
+		<Region from="264" to="285" loc="M"/>
+		<Region from="286" to="306" loc="I"/>
+pongo_abelii
+	<Topology numTM="1" reliability="96.7693">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="206" loc="O"/>
+		<Region from="207" to="228" loc="M"/>
+		<Region from="229" to="269" loc="I"/>
+rhinopithecus_bieti
+	<Topology numTM="1" reliability="96.7491">
+		<Region from="1" to="19" loc="S"/>
+		<Region from="20" to="207" loc="O"/>
+		<Region from="208" to="228" loc="M"/>
+		<Region from="229" to="269" loc="I"/>
+rhinopithecus_roxellana
+	<Topology numTM="1" reliability="96.2239">
+		<Region from="1" to="141" loc="O"/>
+		<Region from="142" to="163" loc="M"/>
+		<Region from="164" to="204" loc="I"/>
+saimiri_boliviensis
+	<Topology numTM="1" reliability="94.8921">
+		<Region from="1" to="191" loc="O"/>
+		<Region from="192" to="213" loc="M"/>
+		<Region from="214" to="254" loc="I"/>
+theropithecus_gelada
+	<Topology numTM="2" reliability="95.1638">
+		<Region from="1" to="51" loc="I"/>
+		<Region from="52" to="67" loc="M"/>
+		<Region from="68" to="381" loc="O"/>
+		<Region from="382" to="401" loc="M"/>
+		<Region from="402" to="442" loc="I"/>
