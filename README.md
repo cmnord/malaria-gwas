@@ -10,7 +10,7 @@
 
 [Roadmap Epigenomics Project metadata][roadmap]
 
-INFECTED PRIMATES:
+## INFECTED PRIMATES:
 
 -   Homo Sapiens (human)
 -   Pan Troglodytes (chimp)
@@ -50,19 +50,19 @@ Non-human primates: download from [here][usc]:
 | ?                         | Proboscis monkey         |
 | ?                         | Tarsier                  |
 
-DATA - GWAS Analysis
+## DATA - GWAS Analysis
 
 -   We have the epigenetic data across all cell types
 -   We have downloaded (?) the GWAS catalog, which has other SNPs that are found to be significant for other phenotypes
 
-TOOLS - GWAS Analysis
+## TOOLS - GWAS Analysis
 
 -   `bedtools` - command line tool for searching through epigenomic data
     -   useful commands may include: `intersect`, `count-overlap` (documentation has good explanations)
 -   R package `genomicRegions` - can be used to do the same thing and can make nice graphics (need to install using bioconductor)
 -   Python
 
-STEPS - GWAS Analysis
+## STEPS - GWAS Analysis
 
 1.  DONE (Kari): Compile SNP gene locations from the Malaria GWAS study that we have
 1.  DONE (Kari): Compile other SNPS from the GWAS catalog, which we use as our background
