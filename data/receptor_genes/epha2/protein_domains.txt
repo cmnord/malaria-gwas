@@ -1,0 +1,108 @@
+homo_sapiens
+	<Topology numTM="1" reliability="99.5643">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+piliocolobus_tephrosceles
+	<Topology numTM="1" reliability="99.5622">
+		<Region from="1" to="25" loc="S"/>
+		<Region from="26" to="544" loc="O"/>
+		<Region from="545" to="560" loc="M"/>
+		<Region from="561" to="978" loc="I"/>
+cebus_capucinus
+	<Topology numTM="1" reliability="99.2909">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="541" loc="O"/>
+		<Region from="542" to="557" loc="M"/>
+		<Region from="558" to="976" loc="I"/>
+pan_paniscus
+	<Topology numTM="1" reliability="99.5643">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+nomascus_leucogenys
+	<Topology numTM="1" reliability="99.5642">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+callithrix_jacchus
+	<Topology numTM="1" reliability="99.2909">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="541" loc="O"/>
+		<Region from="542" to="557" loc="M"/>
+		<Region from="558" to="976" loc="I"/>
+pan_troglodytes
+	<Topology numTM="1" reliability="99.5512">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="979" loc="I"/>
+gorilla_gorilla
+	<Topology numTM="1" reliability="99.6345">
+		<Region from="1" to="25" loc="S"/>
+		<Region from="26" to="501" loc="O"/>
+		<Region from="502" to="517" loc="M"/>
+		<Region from="518" to="936" loc="I"/>
+colobus_angolensis
+	<Topology numTM="1" reliability="99.5636">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+saimiri_boliviensis
+	<Topology numTM="1" reliability="99.3151">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="1003" loc="I"/>
+macaca_mulatta
+	<Topology numTM="1" reliability="99.5621">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+rhinopithecus_roxellana
+	<Topology numTM="1" reliability="99.5622">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+pongo_abelii
+	<Topology numTM="1" reliability="99.5642">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+papio_anubis
+	<Topology numTM="1" reliability="99.5643">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+mandrillus_leucophaeus
+	<Topology numTM="1" reliability="99.5643">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+cercocebus_atys
+	<Topology numTM="1" reliability="99.5643">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+macaca_fascicularis
+	<Topology numTM="1" reliability="99.5634">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
+aotus_nancymaae
+	<Topology numTM="1" reliability="99.5637">
+		<Region from="1" to="23" loc="S"/>
+		<Region from="24" to="542" loc="O"/>
+		<Region from="543" to="558" loc="M"/>
+		<Region from="559" to="976" loc="I"/>
