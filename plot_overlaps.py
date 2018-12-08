@@ -1,7 +1,13 @@
 import sys
+import os
 import pandas as pd
 import matplotlib.patches as mpatches
 from matplotlib import pyplot as plt
+
+OUTPUT_DIR = 'graph_results/H3K4me3/{}'
+FILTERED_CELL_TYPES_FILE = 'data/epigenomic_annotations/roadmap_metadata_filtered.tsv'
+OVERLAPS_DIR = 'data/overlaps/H3K4me3/{}'
+ROADMAP_METADATA = 'data/epigenomic_annotations/roadmap_metadata.tsv'
 
 
 def get_num(elem):
@@ -57,17 +63,16 @@ def filter_cell_types(meta):
             filtered_cell_types.append(types_to_check[i])
 
     # creates new metadata that's filtered for valid cell types
-    filtered_meta.to_csv(
-        "./data/roadmap_metadata_filtered.tsv", "\t", index=False)
+    filtered_meta.to_csv(FILTERED_CELL_TYPES_FILE, '\t', index=False)
 
     return filtered_cell_types
 
 
 def create_df(filepath, columns=None):
-    if filepath[-3:] == "tsv":
-        df = pd.read_csv(filepath, sep="\t", header=None)
-    elif filepath[-3:] == "csv":
-        df = pd.read_csv(filepath, sep=",", header=None)
+    if filepath[-3:] == 'tsv':
+        df = pd.read_csv(filepath, sep='\t', header=None)
+    elif filepath[-3:] == 'csv':
+        df = pd.read_csv(filepath, sep=',', header=None)
     if columns == None:  # make the first row the column headers
         df.columns = list(df.ix[0])
         df.drop([0], axis=0, inplace=True)
@@ -163,7 +168,7 @@ def plot_enriched_snps(x_vals, y_vals, colors):
                         for key in c.keys()], bbox_to_anchor=(1, 1), loc=2)
 
     for i, v in enumerate(reversed(y_vals)):
-        plt.text(v, i, " " + str(v), color='black',
+        plt.text(v, i, ' ' + str(v), color='black',
                  va='center', fontweight='bold')
 
     plt.ylabel('SNPs in Enriched Regions', fontsize=15)
@@ -171,8 +176,8 @@ def plot_enriched_snps(x_vals, y_vals, colors):
     plt.title('SNPs Within Enriched Epigenomic Regions', fontsize=20)
 
     # plt.show()
-    plt.savefig(
-        './graph_results/All_SNPs_Within_Enriched_Epigenomic_Regions.png')
+    plt.savefig(OUTPUT_DIR.format(
+        'All_SNPs_Within_Enriched_Epigenomic_Regions.png'))
 
 
 def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
@@ -205,7 +210,7 @@ def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
     for key in counts1.keys():
         mix[key] = float(counts1[key])/float(counts1[key]+counts2[key])
 
-    # sort by epigenome name (ie: 'E003')
+    # sort by epigenome name (e.g.: 'E003')
     x_vals = sorted(counts1.keys(), key=get_num)
     # x_vals.sort(key=lambda cell_type: mix[cell_type]) # sort by number of snps
     x_vals.sort(key=lambda cell_type: (['Erythrocytes (RBC)'] + list(
@@ -214,7 +219,7 @@ def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
     plt.figure(figsize=(15, 20))
 
     plt.barh(list(reversed(range(len(y_vals)))), y_vals, color=[
-             'blue' if x == 'E066' else 'red' if x == "E000" else meta['COLOR'][meta_cell_types.index(x)] for x in x_vals], tick_label=x_vals)
+             'blue' if x == 'E066' else 'red' if x == 'E000' else meta['COLOR'][meta_cell_types.index(x)] for x in x_vals], tick_label=x_vals)
 
     colors = dict()
     for i in range(3, len(meta_cell_types)):
@@ -226,37 +231,40 @@ def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
         color='blue', label='Liver')] + [mpatches.Patch(color=key, label=colors[key]) for key in colors.keys()], loc=1)
 
     # for i, v in enumerate(reversed(y_vals)):
-    #     plt.text(v, i, " " + str(v), color='black', va='center', fontweight='bold')
+    #     plt.text(v, i, ' ' + str(v), color='black', va='center', fontweight='bold')
 
     plt.ylabel('Cell Types', fontsize=15)
     plt.xlabel('Percent Malaria SNPs of All SNPs in Enriched Regions', fontsize=15)
     plt.title('Cell Types With Enriched Malaria SNPs', fontsize=20)
 
     # plt.show()
-    plt.savefig(
-        './graph_results/All_Cell_Types_With_Enriched_Malaria_SNPs_[normalized].png')
+    plt.savefig(OUTPUT_DIR.format(
+        'All_Cell_Types_With_Enriched_Malaria_SNPs_normalized.png'))
 
 
 def main():
-    primary = create_df("./data/overlaps/malaria_acetylation_overlap.tsv",
-                        ['Cell Type', 'Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
-    back = create_df("./data/overlaps/background_acetylation_overlap.tsv",
-                     ['Cell Type', 'Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
-    p_meta = create_df("./data/roadmap_metadata.tsv")
+    acetylation_rows = ['Cell Type', 'Chromosome',
+                        'SNP Start', 'SNP End', 'SNP Name']
+    primary = create_df(OVERLAPS_DIR.format(
+        'malaria_acetylation_overlap.tsv'), acetylation_rows)
+    back = create_df(OVERLAPS_DIR.format(
+        'background_acetylation_overlap.tsv'), acetylation_rows)
 
-    blood = create_df("./data/overlaps/malaria_rbc_expression_overlap.tsv",
-                      ['Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
-    add_SNP_names(blood, create_df("./data/snps.csv"))
-    blood_back = create_df("./data/overlaps/background_rbc_expression_overlap.tsv",
-                           ['Chromosome', 'SNP Start', 'SNP End', 'SNP Name'])
+    rbc_expression_rows = ['Chromosome', 'SNP Start', 'SNP End', 'SNP Name']
+    blood = create_df(OVERLAPS_DIR.format(
+        'malaria_rbc_expression_overlap.tsv'), rbc_expression_rows)
+    add_SNP_names(blood, create_df('./data/snps.csv'))
+    blood_back = create_df(OVERLAPS_DIR.format(
+        'background_rbc_expression_overlap.tsv'), rbc_expression_rows)
 
     # finding how many cell types each malaria SNP is enriched in
     x_vals, y_vals, colors = create_dic(primary, blood)
     plot_enriched_snps(x_vals, y_vals, colors)
 
+    p_meta = create_df(ROADMAP_METADATA)
     # finding how many enriched malaria SNPs (out of all enriched SNPs) are in each cell type
     plot_malaria_cell_types(primary, back, blood, blood_back, p_meta)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
