@@ -6,14 +6,14 @@ import os.path
 import pdb
 
 BASE_URL = 'https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/{}'
-FILE_NAME = '{}-H3K27ac.narrowPeak.gz'
+FILE_NAME = '{}-H3K4me3.narrowPeak.gz'
 
 
 def main():
     """
     Docstring
     """
-    cell_types = ['E{:03}'.format(i) for i in range(3, 130)]
+    cell_types = ['E{:03}'.format(i) for i in range(1, 130)]
     for cell_type in cell_types:
         filename = FILE_NAME.format(cell_type)
         print(filename)
