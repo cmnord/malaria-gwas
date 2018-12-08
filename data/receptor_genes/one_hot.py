@@ -91,7 +91,6 @@ if __name__ == "__main__":
 	    for (name, seq) in read_fasta(fp):
 	        names.append(name[1:])
 	        reads.append(seq)
-	fp.close()
 
 	# figure out how to name the features
 	length = len(reads[0])*21

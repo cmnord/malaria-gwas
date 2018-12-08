@@ -1,9 +1,5 @@
-from Bio import pairwise2
-from Bio.pairwise2 import format_alignment
 import sys
 import os
-import numpy as np
-import pandas as pd
 
 ##################################
 ### TAKES IN THE OUTPUT OF PAIRWISE.SH AND ANNOTATES
@@ -84,7 +80,7 @@ def find_identical_subsequences(reads, use_blosum = False):
 
 if __name__ == "__main__":
 	if len(sys.argv) < 1:
-		print "you must call program as: python pairwise_similarities.py <alignment.afa>"
+		print("you must call program as: python pairwise_similarities.py <alignment.afa>")
 		sys.exit(1)
 
 	filename = sys.argv[1]
@@ -95,7 +91,6 @@ if __name__ == "__main__":
 	    for (name, seq) in read_fasta(fp):
 	        names.append(name[1:])
 	        reads.append(seq)
-	fp.close()
 
 	HUMAN = None
 	ident_dict = {}
@@ -110,7 +105,7 @@ if __name__ == "__main__":
 			ident_dict[n[1]] = find_identical_subsequences(compare, True)
 
 	for key in ident_dict:
-		print key, ident_dict[key]
+		print(key, ident_dict[key])
 
 
 fn = os.path.join(directory, filename[:-4])

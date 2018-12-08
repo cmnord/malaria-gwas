@@ -94,8 +94,6 @@ with open(filename) as fp:
     		nf_names.append(name[1:])
     		nf_reads.append(seq)
 
-fp.close()
-
 # make sequence of ones and zeros to show sequences identical across species
 def find_identical_subsequences(reads, use_blosum = False):
 	read_matrix = []

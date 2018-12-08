@@ -49,13 +49,11 @@ for filename in os.listdir(workingdir):
             for (name, seq) in read_fasta(fp):
                 names.append(name)
                 reads.append(seq)
-        fp.close()
 
         with open(os.path.join(workingdir, prot + '_all_primates.fa'), 'a') as f3:
             f3.write('>' + spec + '\n')
             for read in reads:
                 f3.write(read)
-        f3.close()
         continue
 
 for filename in os.listdir(workingdir):
@@ -72,12 +70,10 @@ for filename in os.listdir(workingdir):
             for (name, seq) in read_fasta(fp):
                 names.append(name)
                 reads.append(seq)
-        fp.close()
         with open(os.path.join(workingdir, prot + '_all_primates.fa'), 'a') as f3:
             f3.write('\n' + '>' + spec + '\n')
             for i in range(len(reads)):
                 f3.write(reads[i])
-        f3.close()
 
 
 # ### GLOBAL ALIGNMENTS -- all best

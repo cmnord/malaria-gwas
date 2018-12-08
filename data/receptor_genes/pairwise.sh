@@ -1,4 +1,4 @@
-######## for running mulltiple alignment on multiple files
+######## for running multiple alignment on multiple files
 ######## runs python script to compare each sequence with 
 ########   human sequence
 ########-------------------------------------------------
