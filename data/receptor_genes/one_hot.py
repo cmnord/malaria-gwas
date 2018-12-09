@@ -45,7 +45,7 @@ chemsim = {0:["A","G"],
 			7:["-"]}
 
 
-print len(aas)
+print(len(aas))
 names = []
 reads = []
 
@@ -76,15 +76,15 @@ def encode_groups(aa):
 
 if __name__ == "__main__":
 	if len(sys.argv) < 1:
-		print "you must call program as: python one_hot.py <alignment.afa>"
+		print("you must call program as: python one_hot.py <alignment.afa>")
 		sys.exit(1)
 	filename = sys.argv[1]
-	print filename
+	print(filename)
 	p = filename.find('\\')
 	#o = filename.find('.afa')
 	protein = filename[:p]
 	region = filename[-6:]
-	print region
+	print(region)
 
 	directory = os.getcwd()
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
 	df = pd.DataFrame(features, columns=headers, index=names)
 	df["Species"] = specs
 
-	print df
+	print(df)
 	
 	df1 = df.loc[:,(df!=0).any()]
 	df2 = df1.loc[:,(df1!=1).any()]
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 	#print df1
 	#print df2
 	#print df3
-	print df4
+	print(df4)
 	# for header in df4:
 	# 	print df4[header]
 
