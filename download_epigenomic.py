@@ -6,7 +6,7 @@ import os.path
 import pdb
 
 BASE_URL = 'https://egg2.wustl.edu/roadmap/data/byFileType/peaks/consolidated/narrowPeak/{}'
-FILE_NAME = '{}-H3K4me3.narrowPeak.gz'
+FILE_NAME = '{}-H3K4me1.narrowPeak.gz'
 
 
 def main():
