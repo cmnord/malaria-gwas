@@ -13,8 +13,8 @@ import os
 MALARIA_GWAS = 'data/gwas_associations/snps.bed'
 BACKGROUND_GWAS = 'data/gwas_associations/gwas_catalog_data.bed'
 RBC_EXPRESSION_FILE = 'data/rbc_gene_expression/rbc_w_genes_locs.bed'
-EPIGENOMIC_FOLDER = 'data/epigenomic_annotations/H3K4me3/'
-OUTPUT_FOLDER = 'data/overlaps/H3K4me3/{}'
+EPIGENOMIC_FOLDER = 'data/epigenomic_annotations/H3K4me1/'
+OUTPUT_FOLDER = 'data/overlaps/H3K4me1/{}'
 ZIPFILE_EXTENSION = '.gz'
 
 

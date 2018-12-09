@@ -7,29 +7,31 @@ library(ggplot2)
 library(caret)
 library(pROC) #<- not installed
 
-algns1 = read.csv('duffy/outer/duffy_all_primates_outer1.csv')#,row.names=1)
-algns2 = read.csv('duffy/outer/duffy_all_primates_outer2.csv')#,row.names=1)
-algns3 = read.csv('duffy/outer/duffy_all_primates_outer3.csv')#,row.names=1)
-algns4 = read.csv('duffy/outer/duffy_all_primates_outer4.csv')#,row.names=1)
-algns = merge(algns1, algns2, by=c("X","Species"), all=TRUE)
+algns1 = read.csv('all_combined_features_minband3duff.csv')
+#algns1 = read.csv('band3/outer/band3_all_primates_outer4.csv')#,row.names=1)
+#algns2 = read.csv('duffy/outer/duffy_all_primates_outer2.csv')#,row.names=1)
+#algns3 = read.csv('duffy/outer/duffy_all_primates_outer3.csv')#,row.names=1)
+#algns4 = read.csv('duffy/outer/duffy_all_primates_outer4.csv')#,row.names=1)
+#algns = merge(algns1, algns2, by=c("X","Species"), all=TRUE)
 #dim(algns)
 #algns$X
-algns = merge(algns, algns3, by=c("X", "Species"), all=TRUE)
+#algns = merge(algns, algns3, by=c("X", "Species"), all=TRUE)
 #dim(algns)
 #algns$X
-algns = merge(algns, algns4, by=c("X", "Species"), all=TRUE)
+#algns = merge(algns, algns4, by=c("X", "Species"), all=TRUE)
 #dim(algns)
 #algns$X
-row.names(algns)<-algns$X
-algns$X<-NULL
-row.names(algns1)<-algns1$X
-row.names(algns2)<-algns2$X
-row.names(algns3)<-algns3$X
-row.names(algns4)<-algns4$X
+#row.names(algns)<-algns$X
+#algns$X<-NULL
+row.names(algns1)<-algns1$Unnamed..0
+algns1$Unnamed..0<-NULL
+#row.names(algns2)<-algns2$X
+#row.names(algns3)<-algns3$X
+#row.names(algns4)<-algns4$X
 algns1$X<-NULL
-algns2$X<-NULL
-algns3$X<-NULL
-algns4$X<-NULL
+#algns2$X<-NULL
+#algns3$X<-NULL
+#algns4$X<-NULL
 #set.seed(1234)
 #levels(algns$Species) = c('infected', 'resistant')
 
@@ -38,12 +40,12 @@ algns4$X<-NULL
 #testDF = algns[-index,]
 #trainSet <- data.matrix(algns[index,])
 #testSet <- data.matrix(algns[-index,])
-for(header in colnames(algns4)){
-  if (all(algns4[,header]==0) || all(algns4[,header]==1)){
-    algns4[,header]<-NULL
+for(header in colnames(algns1)){
+  if (all(algns1[,header]==0) || all(algns1[,header]==1)){
+    algns1[,header]<-NULL
   }
 }
-trainSet <- algns4
+trainSet <- algns1
 outcomeName = "Species"
 predictors = colnames(trainSet)[!colnames(trainSet) %in% outcomeName]
 
@@ -90,4 +92,4 @@ print(row)
 imps = varImp(m1)
 imp = imps$importance
 imp$feats=row.names(imp)
-diiii = filter(imp,imp$Overall>0)
+alli = filter(imp,imp$Overall>0)

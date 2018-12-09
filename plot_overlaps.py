@@ -4,9 +4,9 @@ import pandas as pd
 import matplotlib.patches as mpatches
 from matplotlib import pyplot as plt
 
-OUTPUT_DIR = 'graph_results/H3K4me3/{}'
+OUTPUT_DIR = 'graph_results/H3K4me1/{}'
 FILTERED_CELL_TYPES_FILE = 'data/epigenomic_annotations/roadmap_metadata_filtered.tsv'
-OVERLAPS_DIR = 'data/overlaps/H3K4me3/{}'
+OVERLAPS_DIR = 'data/overlaps/H3K4me1/{}'
 ROADMAP_METADATA = 'data/epigenomic_annotations/roadmap_metadata.tsv'
 
 

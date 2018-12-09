@@ -122,8 +122,8 @@ if __name__ == "__main__":
 	
 	df1 = df.loc[:,(df!=0).any()]
 	df2 = df1.loc[:,(df1!=1).any()]
-	df3 = df2.loc[:, (df2.sum(axis=0))>3]
-	df4 = df3.loc[:, (df3.sum(axis=0))<16]
+	df3 = df2.loc[:, (df2.sum(axis=0))>1]
+	df4 = df3.loc[:, (df3.sum(axis=0))<17]
 	df4["Species"] = df3["Species"]
 	#print df1
 	#print df2
@@ -132,5 +132,5 @@ if __name__ == "__main__":
 	# for header in df4:
 	# 	print df4[header]
 
-	df4.to_csv(os.path.join(directory,filename)+'.csv')
+	df4.to_csv(os.path.join(directory,filename[:-4])+'.csv')
 
