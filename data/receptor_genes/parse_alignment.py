@@ -45,7 +45,10 @@ blosum2 = {"A":['A','S'],
 			"T":['S', 'T'],
 			"W":['F', 'W', 'Y'],
 			"Y":['H', 'F', 'W', 'Y'],
-			"V":['I', 'L', 'M', 'V']}
+			"V":['I', 'L', 'M', 'V'],
+			"-":["-"]}
+aas = ["A", "R", "N", "D", "C", "Q", "E", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V", "-"]
+
 
 if len(sys.argv) < 1:
 	print "you must call program as: python parse_alignments.py <alignment.afa>"
@@ -81,6 +84,7 @@ nf_names = []
 # nothing done with this piece of code right now
 # maybe want to find sequences where all nucleotides are identical
 # - these
+
 with open(filename) as fp:
     for (name, seq) in read_fasta(fp):
         names.append(name[1:])
@@ -93,6 +97,13 @@ with open(filename) as fp:
         if nn == False:
     		nf_names.append(name[1:])
     		nf_reads.append(seq)
+
+HUMAN=None
+for i in range(len(infected_names)):
+	if infected_names[i] == 'homo_sapiens':
+		HUMAN = infected_reads[i]
+		break
+
 
 # make sequence of ones and zeros to show sequences identical across species
 def find_identical_subsequences(reads, use_blosum = False):
@@ -133,7 +144,7 @@ def find_identical_subsequences(reads, use_blosum = False):
 # make a dataframe and csv file with the alignments
 # endname is something like '_alignments.csv' or whatever you want the file to end with
 # m_file is true of false, depending on if you want a csv file
-def make_alignment_csv(reads, endname, m_file):
+def make_alignment_csv(reads, endname=None, m_file=False):
 	reads2 = []
 	for i in range(len(reads)):
 		reads2.append(list(reads[i]))
@@ -143,10 +154,10 @@ def make_alignment_csv(reads, endname, m_file):
 	return reads2
 
 
-all_ident = find_identical_subsequences(reads)
-inf_ident = find_identical_subsequences(infected_reads)
-res_ident = find_identical_subsequences(nf_reads)
-ident_list = [all_ident, inf_ident, res_ident]
+# all_ident = find_identical_subsequences(reads)
+# inf_ident = find_identical_subsequences(infected_reads)
+# res_ident = find_identical_subsequences(nf_reads)
+# ident_list = [all_ident, inf_ident, res_ident]
 
 all_identB = find_identical_subsequences(reads, True)
 inf_identB = find_identical_subsequences(infected_reads, True)
@@ -154,8 +165,55 @@ res_identB = find_identical_subsequences(nf_reads, True)
 ident_listB = [all_identB, inf_identB, res_identB]
 
 # print ident_list
-ident_matrix = np.array(make_alignment_csv(ident_list, '_identical.csv', True))
-ident_matrixB = np.array(make_alignment_csv(ident_listB, '_b2_identical.csv', True))
+#ident_matrix = np.array(make_alignment_csv(ident_list, '_identical.csv', True))
+ident_matrixB = np.array(make_alignment_csv(ident_listB))
+#headers = ["_"+str(int(i/21))+aas[i%21] for i in range(len(ident_matrixB[0])*21)]
+headers = ["pos"+str(i) for i in range(len(ident_listB[0]))]
+indns = ["all_primates", "infected", "resistant"]
+imBdf = pd.DataFrame(data=ident_matrixB, columns=headers, index=indns)
+#print imBdf
+df1 = imBdf.loc[:,(imBdf!=1).any()]
+#df2 = df1.loc[:,(df1!=0).any()]
+#print df1
+#df3 = df2.loc[:, (df2.sum(axis=0))>1]
+#df4 = df3.loc[:, (df3.sum(axis=0))<17]
+#df4["Species"] = df3["Species"]
+
+def devs_from_human(reads):
+	cons = []
+	for i in range(len(reads[0])):
+		num = []
+		for j in range(len(reads)):
+			#print reads[j][i], HUMAN[i], blosum2[HUMAN[i]]
+			if reads[j][i] != HUMAN[i]:
+			#if reads[j][i] not in blosum2[HUMAN[i]]:
+				num.append(0)
+			else:
+				num.append(1)
+		if sum(num) < 1:#len(reads)/3:
+			cons.append("0")
+		elif sum(num) >= len(reads)-1:
+			cons.append("1")
+		else:
+			cons.append("~")
+	return cons
+
+inf_h_comp = devs_from_human(infected_reads)
+noninf_h_comp = devs_from_human(nf_reads)
+ihcs = "".join(inf_h_comp)
+nihcs = "".join(noninf_h_comp)
+print ihcs
+print nihcs
+diffs = []
+for i in range(len(nihcs)):
+	if nihcs[i] == "0":
+		diffs.append(i)
+ind = nihcs.find("0")
+
+for j in range(len(diffs)):
+	print HUMAN[diffs[j]], "human"
+	for i in range(len(nf_names)):
+		print nf_reads[i][diffs[j]],nf_names[i]
 
 
 # find all sequences of 1's
@@ -190,16 +248,19 @@ def find_conserved_seqs(seqs):
 			i+=1
 	return pairs
 
-inf_pairs = find_conserved_seqs(inf_ident)
-res_pairs = find_conserved_seqs(res_ident)
-all_pairs = find_conserved_seqs(all_ident)
-print inf_pairs
-print res_pairs
-print all_pairs
+# inf_pairs = find_conserved_seqs(inf_ident)
+# res_pairs = find_conserved_seqs(res_ident)
+# all_pairs = find_conserved_seqs(all_ident)
+# print inf_pairs
+# print res_pairs
+# print all_pairs
 
-inf_pairsB = find_conserved_seqs(inf_identB)
-res_pairsB = find_conserved_seqs(res_identB)
-all_pairsB = find_conserved_seqs(all_identB)
+inf_pairsB = find_conserved_seqs(imBdf.values[1])
+res_pairsB = find_conserved_seqs(imBdf.values[2])
+all_pairsB = find_conserved_seqs(imBdf.values[0])
+# print inf_pairsB
+# print res_pairsB
+# print all_pairsB
 
 
 # find parts that are similarly conserved between two species
@@ -231,10 +292,26 @@ def find_overlaps(pairs1, pairs2):
 				continue
 	return overlaps
 
-inf_all_overlaps = find_overlaps(inf_pairs, all_pairs)
+# inf_all_overlaps = find_overlaps(inf_pairs, all_pairs)
 inf_all_overlapsB = find_overlaps(inf_pairsB, all_pairsB)
-print np.array(inf_all_overlaps)
-print np.array(inf_all_overlapsB)
+# print np.array(inf_all_overlaps)
+# print np.array(inf_all_overlapsB)
+
+#["all_primates", "infected", "resistant"]
+comp = []
+vals = imBdf.values
+for i in range(len(vals[0])):
+	found = False
+	for pair in all_pairsB:
+		if i in range(pair[0],pair[1]+1):
+			comp.append('')
+			found = True
+			continue
+	if found == False:
+		pass
+
+
+
 
 # for l in inf_all_overlaps:
 # 	print infected_reads[0][l[0][0]:l[0][1]]
