@@ -1,0 +1,10 @@
+#NEXUS
+
+BEGIN TAXA;
+	DIMENSIONS ntax=16;
+	TAXLABELS  aotus_nancymaae saimiri_boliviensis cebus_capucinus gorilla_gorilla pongo_abelii nomascus_leucogenys macaca_nemestrina macaca_mulatta papio_anubis cercocebus_atys chlorocebus_sabaeus rhinopithecus_roxellana callithrix_jacchus pan_troglodytes pan_paniscus homo_sapiens;
+END;
+
+BEGIN TREES;
+	TREE tree_1 = (((((((aotus_nancymaae:0.145716,saimiri_boliviensis:-0.0910643)inode7:0.0201568,cebus_capucinus:0.185915)inode6:0.0433437,gorilla_gorilla:0.26782)inode5:0.00930032,pongo_abelii:0.0251039)inode4:0.0332439,nomascus_leucogenys:0.0817383)inode3:0.00808036,((((((macaca_nemestrina:0.0096662,macaca_mulatta:0.00519278)inode13:0.0184886,papio_anubis:0.0196097)inode12:0.0102398,cercocebus_atys:0.0284)inode11:0.0210245,chlorocebus_sabaeus:0.0259516)inode10:0.0256358,rhinopithecus_roxellana:0.00274473)inode9:0.106084,callithrix_jacchus:-0.00620577)inode8:0.0331952)inode2:0.0307354,((pan_troglodytes:0.0161096,pan_paniscus:0.019228)inode15:0.0093614,homo_sapiens:0.060677)inode14:0.0307354)root;
+END;

@@ -243,23 +243,23 @@ def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
 
 
 def main():
-    acetylation_rows = ['Cell Type', 'Chromosome',
+    acetylation_cols = ['Cell Type', 'Chromosome',
                         'SNP Start', 'SNP End', 'SNP Name']
     primary = create_df(OVERLAPS_DIR.format(
-        'malaria_acetylation_overlap.tsv'), acetylation_rows)
+        'malaria_acetylation_overlap.tsv'), acetylation_cols)
     back = create_df(OVERLAPS_DIR.format(
-        'background_acetylation_overlap.tsv'), acetylation_rows)
+        'background_acetylation_overlap.tsv'), acetylation_cols)
 
-    rbc_expression_rows = ['Chromosome', 'SNP Start', 'SNP End', 'SNP Name']
+    rbc_expression_cols = ['Chromosome', 'SNP Start', 'SNP End', 'SNP Name']
     blood = create_df(OVERLAPS_DIR.format(
-        'malaria_rbc_expression_overlap.tsv'), rbc_expression_rows)
+        'malaria_rbc_expression_overlap.tsv'), rbc_expression_cols)
     add_SNP_names(blood, create_df('./data/snps.csv'))
     blood_back = create_df(OVERLAPS_DIR.format(
-        'background_rbc_expression_overlap.tsv'), rbc_expression_rows)
+        'background_rbc_expression_overlap.tsv'), rbc_expression_cols)
 
     # finding how many cell types each malaria SNP is enriched in
     x_vals, y_vals, colors = create_dic(primary, blood)
-    plot_enriched_snps(x_vals, y_vals, colors)
+    #plot_enriched_snps(x_vals, y_vals, colors)
 
     p_meta = create_df(ROADMAP_METADATA)
     # finding how many enriched malaria SNPs (out of all enriched SNPs) are in each cell type

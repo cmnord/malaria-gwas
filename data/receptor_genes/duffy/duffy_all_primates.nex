@@ -1,0 +1,10 @@
+#NEXUS
+
+BEGIN TAXA;
+	DIMENSIONS ntax=20;
+	TAXLABELS  rhinopithecus_bieti piliocolobus_tephrosceles rhinopithecus_roxellana pan_paniscus pan_troglodytes homo_sapiens gorilla pongo_abelii saimiri_boliviensis_bolivien cebus_capucinus_imitator aotus_nancymaae callithrix_jacchus theropithecus_gelada mandrillus_leucop colobus_angolensi papio_anubis cercocebus_atys macaca_mulatta macaca_fascicularis macaca_nemestrina;
+END;
+
+BEGIN TREES;
+	TREE tree_1 = (((((((((rhinopithecus_bieti:0.00026287,piliocolobus_tephrosceles:0.00872189)inode9:0.000323209,rhinopithecus_roxellana:-0.000323209)inode8:0.0056734,(((((pan_paniscus:0.00298865,pan_troglodytes:0.00298865)inode14:0.00490512,homo_sapiens:0.0225026)inode13:0.00775293,gorilla:0.0248087)inode12:0.00565888,pongo_abelii:0.0118749)inode11:0.0211639,(((saimiri_boliviensis_bolivien:0.0230823,cebus_capucinus_imitator:0.0358052)inode17:0.0020074,aotus_nancymaae:0.0290682)inode16:0.00189375,callithrix_jacchus:0.0147495)inode15:0.0471581)inode10:0.013869)inode7:0.00401506,((theropithecus_gelada:0.00269159,mandrillus_leucop:0.00325019)inode19:0.00883587,colobus_angolensi:0.0184059)inode18:0.0119425)inode6:0.0114791,papio_anubis:0.00299291)inode5:0.00259589,cercocebus_atys:0.0030682)inode4:0.00260886,macaca_mulatta:0.000390719)inode3:0.00260061,macaca_fascicularis:0.000204849)inode2:-0.000102424,macaca_nemestrina:-0.000102424)root;
+END;

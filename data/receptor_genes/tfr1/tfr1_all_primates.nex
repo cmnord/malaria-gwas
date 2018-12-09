@@ -1,0 +1,10 @@
+#NEXUS
+
+BEGIN TAXA;
+	DIMENSIONS ntax=20;
+	TAXLABELS  rhinopithecus_roxellana pilocolobus_tephrosceles pan_troglodytes pan_paniscus homo_sapiens gorilla nomascus_leucogenys pongo_abelii callithrix_jacchus saimiri_boliviensis cebus_capucinus aotus_trivirgatus aotus_nancymaae galeopterus_variegatus chlorocebus_aethiops macaca_mulatta macaca_fascicularis cercocebus_atys papio_anubis mandrillus_leucophaeus;
+END;
+
+BEGIN TREES;
+	TREE tree_1 = (((((rhinopithecus_roxellana:0.00673071,pilocolobus_tephrosceles:0.0065496)inode5:0.00522764,((((((pan_troglodytes:0.0015375,pan_paniscus:0.00242081)inode11:0.00423234,homo_sapiens:0.00106252)inode10:0.00299744,gorilla:0.00164328)inode9:0.00868114,nomascus_leucogenys:0.0410014)inode8:0.00308739,pongo_abelii:0.00606292)inode7:0.0122265,((((callithrix_jacchus:0.0145022,saimiri_boliviensis:0.0421633)inode15:0.00396731,cebus_capucinus:0.00926132)inode14:0.00108578,(aotus_trivirgatus:0.0044876,aotus_nancymaae:0.0132746)inode16:0.021747)inode13:0.0450524,galeopterus_variegatus:0.133401)inode12:0.0241329)inode6:0.0172443)inode4:0.00335257,chlorocebus_aethiops:0.00641466)inode3:0.00266076,(macaca_mulatta:0.0012771,macaca_fascicularis:3.99019e-05)inode17:0.00437924)inode2:0.0032926,((cercocebus_atys:0.00387024,papio_anubis:0.00278313)inode19:0.00410507,mandrillus_leucophaeus:-0.00299825)inode18:0.0032926)root;
+END;

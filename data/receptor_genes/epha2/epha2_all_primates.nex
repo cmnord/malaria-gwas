@@ -1,0 +1,10 @@
+#NEXUS
+
+BEGIN TAXA;
+	DIMENSIONS ntax=18;
+	TAXLABELS  pan_paniscus pan_troglodytes homo_sapiens pongo_abelii nomascus_leucogenys gorilla_gorilla piliocolobus_tephrosceles rhinopithecus_roxellana colobus_angolensis_palliatus papio_anubis cercocebus_atys mandrillus_leucophaeus macaca_fascicularis macaca_mulatta cebus_capucinus_imitator callithrix_jacchus aotus_nancymaae saimiri_boliviensis;
+END;
+
+BEGIN TREES;
+	TREE tree_1 = (((((pan_paniscus:0.000411468,pan_troglodytes:0.0331825)inode5:0.00135863,homo_sapiens:0.00177264)inode4:0.000573231,pongo_abelii:0.00148185)inode3:0.000385423,(nomascus_leucogenys:0.00450603,gorilla_gorilla:0.052213)inode6:0.00129377)inode2:0.00144104,((((piliocolobus_tephrosceles:-4.21564e-05,rhinopithecus_roxellana:0.00209428)inode10:8.43512e-05,colobus_angolensis_palliatus:0.00197073)inode9:0.00181942,(((papio_anubis:9.90023e-05,cercocebus_atys:0.00195312)inode13:0.000149885,mandrillus_leucophaeus:0.00190519)inode12:0.000154932,(macaca_fascicularis:0.00140603,macaca_mulatta:0.00683802)inode14:0.00191577)inode11:0.00440191)inode8:0.0043728,(((cebus_capucinus_imitator:0.000156888,callithrix_jacchus:0.00601723)inode17:0.00130694,aotus_nancymaae:0.00385304)inode16:0.000348721,saimiri_boliviensis:0.0620237)inode15:0.0157065)inode7:0.00144104)root;
+END;
