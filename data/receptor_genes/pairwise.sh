@@ -2,11 +2,12 @@
 ######## runs python script to compare each sequence with 
 ########   human sequence
 ########-------------------------------------------------
-for file in basigin/outer/*;
+for file in tfr1/outer/*;
 do 
 n=${file:0:(-3)}.$afa
-muscle -in "$file" -out ${n}
-python2 pairwise_similarities.py ${n}
+echo ${n}
+muscle -in "$file" -out ${n}.$afa
+#python2 pairwise_similarities.py ${n}
 done
 
 
