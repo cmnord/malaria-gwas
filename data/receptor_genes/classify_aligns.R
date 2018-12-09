@@ -7,10 +7,10 @@ library(ggplot2)
 library(caret)
 library(pROC) #<- not installed
 
-algns1 = read.csv('duffy/outer/duffy_all_primates_outer1aagroups.csv')#,row.names=1)
-algns2 = read.csv('duffy/outer/duffy_all_primates_outer2aagroups.csv')#,row.names=1)
-algns3 = read.csv('duffy/outer/duffy_all_primates_outer3aagroups.csv')#,row.names=1)
-algns4 = read.csv('duffy/outer/duffy_all_primates_outer4aagroups.csv')#,row.names=1)
+algns1 = read.csv('duffy/outer/duffy_all_primates_outer1.csv')#,row.names=1)
+algns2 = read.csv('duffy/outer/duffy_all_primates_outer2.csv')#,row.names=1)
+algns3 = read.csv('duffy/outer/duffy_all_primates_outer3.csv')#,row.names=1)
+algns4 = read.csv('duffy/outer/duffy_all_primates_outer4.csv')#,row.names=1)
 algns = merge(algns1, algns2, by=c("X","Species"), all=TRUE)
 #dim(algns)
 #algns$X
@@ -38,12 +38,12 @@ algns4$X<-NULL
 #testDF = algns[-index,]
 #trainSet <- data.matrix(algns[index,])
 #testSet <- data.matrix(algns[-index,])
-for(header in colnames(algns)){
-  if (all(algns[,header]==0) || all(algns[,header]==1)){
-    algns[,header]<-NULL
+for(header in colnames(algns4)){
+  if (all(algns4[,header]==0) || all(algns4[,header]==1)){
+    algns4[,header]<-NULL
   }
 }
-trainSet <- algns
+trainSet <- algns4
 outcomeName = "Species"
 predictors = colnames(trainSet)[!colnames(trainSet) %in% outcomeName]
 
@@ -90,4 +90,4 @@ print(row)
 imps = varImp(m1)
 imp = imps$importance
 imp$feats=row.names(imp)
-aa = filter(imp,imp$Overall>0)
+diiii = filter(imp,imp$Overall>0)

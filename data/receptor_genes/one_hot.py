@@ -78,12 +78,13 @@ if __name__ == "__main__":
 	if len(sys.argv) < 1:
 		print "you must call program as: python one_hot.py <alignment.afa>"
 		sys.exit(1)
-
 	filename = sys.argv[1]
+	print filename
 	p = filename.find('\\')
-	o = filename.find('.afa')
+	#o = filename.find('.afa')
 	protein = filename[:p]
-	region = filename[o-6:o]
+	region = filename[-6:]
+	print region
 
 	directory = os.getcwd()
 
@@ -94,8 +95,8 @@ if __name__ == "__main__":
 
 	# figure out how to name the features
 	length = len(reads[0])*21
-	#headers = [protein+"_"+region+"_"+str(int(i/21))+aas[i%21] for i in range(len(reads[0]*21))]
-	headers = [protein+"_"+region+"_pos"+str(int(i/8))+'_'+str(i%8) for i in range(len(reads[0]*8))]
+	headers = [protein+"_"+region+"_"+str(int(i/21))+aas[i%21] for i in range(len(reads[0]*21))]
+	#headers = [protein+"_"+region+"_pos"+str(int(i/8))+'_'+str(i%8) for i in range(len(reads[0]*8))]
 
 	#print headers[:30]
 	# for k in range(len(headers)):
@@ -105,8 +106,8 @@ if __name__ == "__main__":
 	for i in range(len(names)):
 		p_feat = []
 		for aa in reads[i]:
-			#p_feat+=encode_aa(aa)
-			p_feat+=encode_groups(aa)
+			p_feat+=encode_aa(aa)
+			#p_feat+=encode_groups(aa)
 		features[i]+= p_feat
 
 	specs = []
@@ -118,5 +119,18 @@ if __name__ == "__main__":
 	df["Species"] = specs
 
 	print df
-	df.to_csv(os.path.join(directory,filename[:o])+'aagroups.csv')
+	
+	df1 = df.loc[:,(df!=0).any()]
+	df2 = df1.loc[:,(df1!=1).any()]
+	df3 = df2.loc[:, (df2.sum(axis=0))>3]
+	df4 = df3.loc[:, (df3.sum(axis=0))<16]
+	df4["Species"] = df3["Species"]
+	#print df1
+	#print df2
+	#print df3
+	print df4
+	# for header in df4:
+	# 	print df4[header]
+
+	df4.to_csv(os.path.join(directory,filename)+'.csv')
 

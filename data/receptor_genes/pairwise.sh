@@ -2,7 +2,7 @@
 ######## runs python script to compare each sequence with 
 ########   human sequence
 ########-------------------------------------------------
-for file in duffy/outer2/*;
+for file in basigin/outer/*;
 do 
 n=${file:0:(-3)}.$afa
 muscle -in "$file" -out ${n}

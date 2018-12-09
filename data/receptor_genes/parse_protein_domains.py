@@ -88,15 +88,17 @@ def make_outer_domain_fasta_array(domains, sequences):
     new_filename = sequences[:-3] + '_outer.fa'
     newfile = []
     for i in range(len(names)):
-        header = '>' + names[i]
-        newfile.append(header)
-        print(names[i])
-        outer_domains = domains[names[i]]["O"]
-        o_d = []
-        for j in range(len(outer_domains)):
-            seq = list(reads[i])[int(outer_domains[j][0])                                 :int(outer_domains[j][1])]
-            o_d.append("".join(seq))
-        newfile.append(o_d)
+        try:
+            header = '>' + names[i]
+            newfile.append(header)
+            print(names[i])
+            outer_domains = domains[names[i]]["O"]
+            o_d = []
+            for j in range(len(outer_domains)):
+                seq = list(reads[i])[int(outer_domains[j][0])                                 :int(outer_domains[j][1])]
+                o_d.append("".join(seq))
+            newfile.append(o_d)
+        except: pass
     return new_filename, newfile
 
 
@@ -113,10 +115,9 @@ def make_ma_fasta(newfile, new_filename):
                     f.write(line + '\n')
                 else:
                     f.write(line[i] + '\n')
-#make_ma_fasta(newfile, new_filename)
+make_ma_fasta(newfile, new_filename)
 
 # make a folder with individual documents containing the human, and comparison sequence
-
 
 def make_pairwise_fastas(protein, newfile):
     HUMAN_SEQ = None
@@ -142,4 +143,4 @@ def make_pairwise_fastas(protein, newfile):
                 f.write(newfile[i+1])
 
 
-make_pairwise_fastas(protein, newfile)
+#make_pairwise_fastas(protein, newfile)
