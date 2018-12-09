@@ -1,0 +1,101 @@
+,Comments,Epigenome ID (EID),ORDER,GROUP,COLOR,Epigenome Mnemonic,Under Seq,Quality Rating,Auto Use Train (Core),Manual Use Train (Core),Has K27ac,Train Core + K27ac,Core + Ac + DNase + 9 Class1 Marks,Core + Ac + DNase + 13 Class1 Marks,Standardized Epigenome name,Epigenome name (from EDACC Release 9 directory),ANATOMY,TYPE,"LAB
+(Based on 5 core histone marks only)","AGE
+(Post Birth in YEARS/ Fetal in GESTATIONAL WEEKS/CELL LINE CL)","SEX
+(Male, Female, Mixed, Unknown)",SOLID / LIQUID,ETHNICITY,Single Donor (SD) /Composite (C),DONOR / SAMPLE ALIAS,CLASS
+3,,E004,21,ES-deriv,#4178AE,ESDR.H1.BMP4.MESO,1,0,1,0,1,0,1,0,H1 BMP4 Derived Mesendoderm Cultured Cells,H1_BMP4_Derived_Mesendoderm_Cultured_Cells,ESC_DERIVED,ESCDerived,UCSD,CL,Male,,,SD,BMP4-03;BMP4-04;BMP4-07;BMP4-08,Class 1
+4,,E005,22,ES-deriv,#4178AE,ESDR.H1.BMP4.TROP,1,1,1,1,1,1,1,1,H1 BMP4 Derived Trophoblast Cultured Cells,H1_BMP4_Derived_Trophoblast_Cultured_Cells,ESC_DERIVED,ESCDerived,UCSD,CL,Male,,,SD,BMP4-05;BMP4-06;BMP4-09,Class 1
+5,,E006,23,ES-deriv,#4178AE,ESDR.H1.MSC,1,1,1,1,1,1,1,1,H1 Derived Mesenchymal Stem Cells,H1_Derived_Mesenchymal_Stem_Cells,ESC_DERIVED,ESCDerived,UCSD,CL,Male,,,SD,MSC-01;MSC-02,Class 1
+6,,E007,15,ES-deriv,#4178AE,ESDR.H1.NEUR.PROG,1,0,1,0,1,0,1,0,H1 Derived Neuronal Progenitor Cultured Cells,H1_Derived_Neuronal_Progenitor_Cultured_Cells,ESC_DERIVED,ESCDerived,UCSD,CL,Male,,,SD,NPC-03;NPC-04;NPC-05;NPC-06,Class 1
+7,,E008,3,ESC,#924965,ESC.H9,1,1,1,1,1,0,1,1,H9 Cells,H9_Cell_Line,ESC,PrimaryCulture,UCSD,CL,Female,,,SD,H9-01;H9-02;H9-04,Class 1
+8,,E009,16,ES-deriv,#4178AE,ESDR.H9.NEUR.PROG,1,1,1,1,0,0,0,0,H9 Derived Neuronal Progenitor Cultured Cells,H9_Derived_Neuronal_Progenitor_Cultured_Cells,ESC_DERIVED,ESCDerived,BI,CL,Female,,,SD,113,Class 5
+9,,E010,17,ES-deriv,#4178AE,ESDR.H9.NEUR,1,1,1,1,0,0,0,0,H9 Derived Neuron Cultured Cells,H9_Derived_Neuron_Cultured_Cells,ESC_DERIVED,ESCDerived,BI,CL,Female,,,SD,113,Class 5
+10,,E011,20,ES-deriv,#4178AE,ESDR.CD184.ENDO,1,0,1,1,1,1,0,0,hESC Derived CD184+ Endoderm Cultured Cells,hESC_Derived_CD184+_Endoderm_Cultured_Cells,ESC_DERIVED,ESCDerived,BI,CL,Male,,,SD,262;263,Class 2
+11,,E012,19,ES-deriv,#4178AE,ESDR.CD56.ECTO,-1,0,0,0,1,0,0,0,hESC Derived CD56+ Ectoderm Cultured Cells,hESC_Derived_CD56+_Ectoderm_Cultured_Cells,ESC_DERIVED,ESCDerived,BI,CL,Male,,,SD,BioSam_1247;BioSam_1248;BioSam_707,Class 2
+13,,E014,6,ESC,#924965,ESC.HUES48,1,1,1,1,1,1,0,0,HUES48 Cells,HUES48_Cell_Line,ESC,PrimaryCulture,BI,CL,Female,,,SD,197;201;BioSam_824,Class 5
+14,,E015,5,ESC,#924965,ESC.HUES6,1,1,1,1,1,0,0,0,HUES6 Cells,HUES6_Cell_Line,ESC,PrimaryCulture,BI,CL,Female,,,SD,199;207,Class 5
+15,,E016,7,ESC,#924965,ESC.HUES64,1,1,1,1,1,1,0,0,HUES64 Cells,HUES64_Cell_Line,ESC,PrimaryCulture,BI,CL,Male,,,SD,196;202;BioSam_825,Class 2
+17,,E018,12,iPSC,#69608A,IPSC.15b,-1,1,0,0,0,0,0,0,iPS-15b Cells,iPS-15b_Cell_Line,IPSC,PrimaryCulture,BI,CL,Female,,,SD,62,Class 5
+18,,E019,11,iPSC,#69608A,IPSC.18,1,0,1,1,1,0,0,0,iPS-18 Cells,iPS-18_Cell_Line,IPSC,PrimaryCulture,BI,CL,Female,,,SD,39791;46575;46576;46578;46579;46580;BioSam_173,Class 4
+19,,E020,10,iPSC,#69608A,IPSC.20B,1,0,1,1,1,0,0,0,iPS-20b Cells,iPS-20b_Cell_Line,IPSC,PrimaryCulture,BI,CL,Male,,,SD,66;67;BioSam_174,Class 4
+20,,E021,13,iPSC,#69608A,IPSC.DF.6.9,1,1,1,1,1,0,0,0,iPS DF 6.9 Cells,iPS_DF_6.9_Cell_Line,IPSC,PrimaryCulture,UCSD,CL,Male,,,SD,iPS-6.9-01;iPS-6.9-02,Class 2
+21,,E022,14,iPSC,#69608A,IPSC.DF.19.11,0,1,1,0,1,0,0,0,iPS DF 19.11 Cells,iPS_DF_19.11_Cell_Line,IPSC,PrimaryCulture,UCSD,CL,Male,,,SD,iPS-19.11-01;iPS-19.11-02,Class 2
+22,,E023,50,Mesench,#B65C73,FAT.MSC.DR.ADIP,1,1,1,1,0,0,0,0,Mesenchymal Stem Cell Derived Adipocyte Cultured Cells,Mesenchymal_Stem_Cell_Derived_Adipocyte_Cultured_Cells,FAT,PrimaryCulture,BI,CL,Female,,,SD,92;93,Class 5
+23,,E024,9,ESC,#924965,ESC.4STAR,1,1,1,0,0,0,0,0,ES-UCSF4 Cells,4star,ESC,PrimaryCulture,UCSF-UBC,CL,Female,,,SD,UCSF-4*_Cell_Line_hESC,Class 2
+24,,E025,49,Mesench,#B65C73,FAT.ADIP.DR.MSC,1,1,1,1,0,0,0,0,Adipose Derived Mesenchymal Stem Cell Cultured Cells,Adipose_Derived_Mesenchymal_Stem_Cell_Cultured_Cells,FAT,PrimaryCulture,BI,"31Y, 59Y, 41Y",Female,SOLID,Unknown,C,1;92;93,Class 5
+25,,E026,47,Mesench,#B65C73,STRM.MRW.MSC,1,0,1,0,1,0,0,0,Bone Marrow Derived Cultured Mesenchymal Stem Cells,Bone_Marrow_Derived_Mesenchymal_Stem_Cell_Cultured_Cells,STROMAL_CONNECTIVE,PrimaryCulture,BI,"57Y, unknown, unkown, unkown",Unknown,SOLID,Unknown,SD,57;58;59;60,Class 5
+27,,E028,58,Epithelial,#FF9D0C,BRST.HMEC.35,-1,1,0,0,0,0,0,0,Breast variant Human Mammary Epithelial Cells (vHMEC),Breast_vHMEC,BREAST,PrimaryCulture,UCSF-UBC,18Y,Female,SOLID,Caucasian,SD,RM035,Class 3
+28,,E029,38,HSC & B-cell,#678C69,BLD.CD14.PC,1,1,1,1,1,1,0,0,Primary monocytes from peripheral blood,CD14_Primary_Cells,BLOOD,PrimaryCell,UW,"21Y, 37Y",Male,LIQUID,"Hispanic, Unknown",C,RO_01701;RO_01721,Class 5
+29,,E030,46,HSC & B-cell,#678C69,BLD.CD15.PC,-1,1,0,0,0,0,0,0,Primary neutrophils from peripheral blood,CD15_Primary_Cells,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Male,LIQUID,Unknown,SD,23,Class 5
+30,,E031,39,HSC & B-cell,#678C69,BLD.CD19.CPC,-1,1,0,0,0,0,0,0,Primary B cells from cord blood,CD19_Primary_Cells_Cord_BI,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Mixed,LIQUID,Unknown,C,130;CD19_12/22/08;CD19_12/29/08;CD19_2/20/09;CD19_6/26/08;CD19_8/1/08,Class 4
+31,,E032,44,HSC & B-cell,#678C69,BLD.CD19.PPC,1,0,1,1,1,1,0,0,Primary B cells from peripheral blood,CD19_Primary_Cells_Peripheral_UW,BLOOD,PrimaryCell,UW,"21Y, 37Y",Male,LIQUID,"Caucasian, Hispanic",C,RO_01679;RO_01701,Class 5
+32,,E033,27,Blood & T-cell,#55A354,BLD.CD3.CPC,-1,1,0,0,0,0,0,0,Primary T cells from cord blood,CD3_Primary_Cells_Cord_BI,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Unknown,LIQUID,Unknown,C,CD3_39661;CD3_39804;CD3_39811;CD3_39840,Class 3
+33,,E034,25,Blood & T-cell,#55A354,BLD.CD3.PPC,-1,1,0,0,1,0,0,0,Primary T cells from peripheral blood,CD3_Primary_Cells_Peripheral_UW,BLOOD,PrimaryCell,UW,"21Y, 37Y",Male,LIQUID,"Caucasian, Hispanic",C,RO_01679;RO_01701,Class 5
+34,,E035,40,HSC & B-cell,#678C69,BLD.CD34.PC,-1,1,0,0,0,0,0,0,Primary hematopoietic stem cells,CD34_Primary_Cells,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Unknown,LIQUID,Unknown,C,CD34_39629;CD34_39661;CD34_39804;CD34_39811;CD34_39889,Class 4
+35,,E036,43,HSC & B-cell,#678C69,BLD.CD34.CC,0,1,1,1,0,0,0,0,Primary hematopoietic stem cells short term culture,CD34_Cultured_Cells,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Unknown,LIQUID,Unknown,C,123;cultured_CD34_2_20_09,Class 5
+36,,E037,34,Blood & T-cell,#55A354,BLD.CD4.MPC,1,0,1,0,1,0,0,0,Primary T helper memory cells from peripheral blood 2,CD4_Memory_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,20;Donor_100_7_pooled_leukopaks_Jan_7_2011;Donor_101_8_pooled_leukopaks_Jan_20_2011,Class 4
+37,,E038,36,Blood & T-cell,#55A354,BLD.CD4.NPC,1,0,1,0,1,0,0,0,Primary T helper naive cells from peripheral blood,CD4_Naive_Primary_Cells,BLOOD,PrimaryCell,BI;UCSF-UBC,Unknown,Mixed,LIQUID,Unknown,C,Donor_100_7_pooled_leukopaks_Jan_7_2011;Donor_101_8_pooled_leukopaks_Jan_20_2011;TC001,Class 4
+38,,E039,30,Blood & T-cell,#55A354,BLD.CD4.CD25M.CD45RA.NPC,1,0,1,1,1,1,0,0,Primary T helper naive cells from peripheral blood,CD4+_CD25-_CD45RA+_Naive_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+39,,E040,33,Blood & T-cell,#55A354,BLD.CD4.CD25M.CD45RO.MPC,1,0,1,1,1,1,0,0,Primary T helper memory cells from peripheral blood 1,CD4+_CD25-_CD45RO+_Memory_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+40,,E041,31,Blood & T-cell,#55A354,BLD.CD4.CD25M.IL17M.PL.TPC,1,0,1,1,1,1,0,0,Primary T helper cells PMA-I stimulated,CD4+_CD25-_IL17-_PMA-Ionomycin_stimulated_MACS_purified_Th_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+41,,E042,32,Blood & T-cell,#55A354,BLD.CD4.CD25M.IL17P.PL.TPC,1,0,1,0,1,0,0,0,Primary T helper 17 cells PMA-I stimulated,CD4+_CD25-_IL17+_PMA-Ionomcyin_stimulated_Th17_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+42,,E043,29,Blood & T-cell,#55A354,BLD.CD4.CD25M.TPC,1,0,1,0,1,0,0,0,Primary T helper cells from peripheral blood,CD4+_CD25-_Th_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+43,,E044,28,Blood & T-cell,#55A354,BLD.CD4.CD25.CD127M.TREGPC,1,0,1,0,1,0,0,0,Primary T regulatory cells from peripheral blood,CD4+_CD25+_CD127-_Treg_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+44,,E045,26,Blood & T-cell,#55A354,BLD.CD4.CD25I.CD127.TMEMPC,1,0,1,1,1,1,0,0,Primary T cells effector/memory enriched from peripheral blood,CD4+_CD25int_CD127+_Tmem_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,62;332,Class 5
+45,,E046,45,HSC & B-cell,#678C69,BLD.CD56.PC,1,0,1,1,1,1,0,0,Primary Natural Killer cells from peripheral blood,CD56_Primary_Cells,BLOOD,PrimaryCell,UW,"21Y, 37Y",Male,LIQUID,"Caucasian, Hispanic",C,RO_01679;RO_01701,Class 5
+46,,E047,37,Blood & T-cell,#55A354,BLD.CD8.NPC,1,0,1,0,1,0,0,0,Primary T CD8+ naive cells from peripheral blood,CD8_Naive_Primary_Cells,BLOOD,PrimaryCell,BI;UCSF-UBC,Unknown,Mixed,LIQUID,Unknown,C,Donor_100_7_pooled_leukopaks_Jan_7_2011;Donor_101_8_pooled_leukopaks_Jan_20_2011;TC001;TC010,Class 4
+47,,E048,35,Blood & T-cell,#55A354,BLD.CD8.MPC,1,0,1,0,1,0,0,0,Primary T CD8+ memory cells from peripheral blood,CD8_Memory_Primary_Cells,BLOOD,PrimaryCell,BI,Unknown,Unknown,LIQUID,Unknown,C,100_7_pooled_leukopaks_Jan_7_2011;101_8_pooled_leukopaks_Jan_20_2011,Class 5
+48,,E049,48,Mesench,#B65C73,STRM.CHON.MRW.DR.MSC,1,0,1,1,1,1,0,0,Mesenchymal Stem Cell Derived Chondrocyte Cultured Cells,Chondrocytes_from_Bone_Marrow_Derived_Mesenchymal_Stem_Cell_Cultured_Cells,STROMAL_CONNECTIVE,PrimaryCulture,BI,Unknown,Unknown,SOLID,Unknown,C,57;58;59;60,Class 5
+49,,E050,42,HSC & B-cell,#678C69,BLD.MOB.CD34.PC.F,1,0,1,0,1,0,0,0,Primary hematopoietic stem cells G-CSF-mobilized Female,Mobilized_CD34_Primary_Cells_Female,BLOOD,PrimaryCell,BI,Fetus (GW unknown),Mixed,LIQUID,Unknown,C,RO_01480;RO_01508;RO_01536;RO_01549;UW_RO_01480,Class 2
+50,,E051,41,HSC & B-cell,#678C69,BLD.MOB.CD34.PC.M,1,1,1,1,0,0,0,0,Primary hematopoietic stem cells G-CSF-mobilized Male,Mobilized_CD34_Primary_Cells_Male,BLOOD,PrimaryCell,BI,42Y,Male,LIQUID,Caucasian,SD,RO_01562,Class 3
+51,,E052,51,Myosat,#E67326,MUS.SAT,1,0,1,0,0,0,0,0,Muscle Satellite Cultured Cells,Muscle_Satellite_Cultured_Cells,MUSCLE,PrimaryCulture,BI,Unknown,Unknown,SOLID,Unknown,C,hSKM-1;hSKM-2;hSKM-3,Class 5
+52,,E053,61,Neurosph,#FFD924,BRN.CRTX.DR.NRSPHR,-1,0,0,0,0,0,0,0,Cortex derived primary cultured neurospheres,Neurosphere_Cultured_Cells_Cortex_Derived,BRAIN,PrimaryCulture,UCSF-UBC,17GW,Female,SOLID,Unknown,SD,HuFNSC02,Class 4
+53,,E054,60,Neurosph,#FFD924,BRN.GANGEM.DR.NRSPHR,1,0,1,1,0,0,0,0,Ganglion Eminence derived primary cultured neurospheres,Neurosphere_Cultured_Cells_Ganglionic_Eminence_Derived,BRAIN,PrimaryCulture,UCSF-UBC,17GW,Female,SOLID,Unknown,SD,HuFNSC02,Class 2
+54,,E055,52,Epithelial,#FF9D0C,SKIN.PEN.FRSK.FIB.01,1,1,1,1,1,1,0,0,Foreskin Fibroblast Primary Cells skin01,Penis_Foreskin_Fibroblast_Primary_Cells_skin01,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin01,Class 3
+55,,E056,53,Epithelial,#FF9D0C,SKIN.PEN.FRSK.FIB.02,1,0,1,0,1,0,0,0,Foreskin Fibroblast Primary Cells skin02,Penis_Foreskin_Fibroblast_Primary_Cells_skin02,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin02,Class 3
+56,,E057,56,Epithelial,#FF9D0C,SKIN.PEN.FRSK.KER.02,-1,1,0,0,0,0,0,0,Foreskin Keratinocyte Primary Cells skin02,Penis_Foreskin_Keratinocyte_Primary_Cells_skin02,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin02,Class 2
+57,,E058,57,Epithelial,#FF9D0C,SKIN.PEN.FRSK.KER.03,1,1,1,1,1,1,0,0,Foreskin Keratinocyte Primary Cells skin03,Penis_Foreskin_Keratinocyte_Primary_Cells_skin03,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin03,Class 2
+58,,E059,54,Epithelial,#FF9D0C,SKIN.PEN.FRSK.MEL.01,1,0,1,0,1,0,0,0,Foreskin Melanocyte Primary Cells skin01,Penis_Foreskin_Melanocyte_Primary_Cells_skin01,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin01,Class 3
+59,,E061,55,Epithelial,#FF9D0C,SKIN.PEN.FRSK.MEL.03,1,1,1,1,1,1,0,0,Foreskin Melanocyte Primary Cells skin03,Penis_Foreskin_Melanocyte_Primary_Cells_skin03,SKIN,PrimaryCulture,UCSF-UBC,0Y,Male,SOLID,Unknown,SD,skin03,Class 4
+60,,E062,24,Blood & T-cell,#55A354,BLD.PER.MONUC.PC,1,0,1,1,1,0,0,0,Primary mononuclear cells from peripheral blood,Peripheral_Blood_Mononuclear_Primary_Cells,BLOOD,PrimaryCell,UCSF-UBC,"28Y, 27Y",Male,LIQUID,"Caucasian, Indian/Arabian",C,TC010;TC012,Class 4
+61,,E063,74,Adipose,#AF5B39,FAT.ADIP.NUC,1,0,1,1,1,1,0,0,Adipose Nuclei,Adipose_Nuclei,FAT,PrimaryTissue,BI,"49Y, 59Y, 41Y, 25Y, 81Y",Female,SOLID,Unknown,C,7;92;93;94;95,Class 5
+62,,E065,84,Heart,#D56F80,VAS.AOR,1,1,1,0,1,0,0,0,Aorta,Aorta,VASCULAR,PrimaryTissue,UCSD,34Y,Male,SOLID,Caucasian,SD,STL003,Class 2
+63,,E066,108,Other,#999999,LIV.ADLT,1,1,1,1,1,1,0,0,Liver,Adult_Liver,LIVER,PrimaryTissue,BI,Unknown,Mixed,SOLID,Unknown,C,3;4;5,Class 2
+64,,E067,69,Brain,#C5912B,BRN.ANG.GYR,1,0,1,1,1,0,0,0,Brain Angular Gyrus,Brain_Angular_Gyrus,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+65,,E068,66,Brain,#C5912B,BRN.ANT.CAUD,1,0,1,1,1,1,0,0,Brain Anterior Caudate,Brain_Anterior_Caudate,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+66,,E069,67,Brain,#C5912B,BRN.CING.GYR,1,0,1,0,1,0,0,0,Brain Cingulate Gyrus,Brain_Cingulate_Gyrus,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+67,,E070,71,Brain,#C5912B,BRN.GRM.MTRX,-1,0,0,0,0,0,0,0,Brain Germinal Matrix,Brain_Germinal_Matrix,BRAIN,PrimaryTissue,UCSF-UBC,20GW,Male,SOLID,Unknown,SD,HuFGM02,Class 2
+68,,E071,64,Brain,#C5912B,BRN.HIPP.MID,1,0,1,1,1,1,0,0,Brain Hippocampus Middle,Brain_Hippocampus_Middle,BRAIN,PrimaryTissue,BI,"81Y, 73Y",Male,SOLID,Unknown,C,149;150,Class 2
+69,,E072,68,Brain,#C5912B,BRN.INF.TMP,1,0,1,1,1,0,0,0,Brain Inferior Temporal Lobe,Brain_Inferior_Temporal_Lobe,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+70,,E073,70,Brain,#C5912B,BRN.DL.PRFRNTL.CRTX,1,0,1,1,1,0,0,0,Brain_Dorsolateral_Prefrontal_Cortex,Brain_Mid_Frontal_Lobe,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+71,,E074,65,Brain,#C5912B,BRN.SUB.NIG,1,0,1,0,1,0,0,0,Brain Substantia Nigra,Brain_Substantia_Nigra,BRAIN,PrimaryTissue,BI,"75Y, 81Y",Mixed,SOLID,Unknown,C,112;149,Class 5
+72,,E075,94,Digestive,#C58DAA,GI.CLN.MUC,-1,0,0,1,1,1,0,0,Colonic Mucosa,Colonic_Mucosa,GI_COLON,PrimaryTissue,BI,73Y,Female,SOLID,Caucasian,SD,32,Class 4
+74,,E077,98,Digestive,#C58DAA,GI.DUO.MUC,1,0,1,0,0,0,0,0,Duodenum Mucosa,Duodenum_Mucosa,GI_DUODENUM,PrimaryTissue,BI,76Y,Male,SOLID,Caucasian,SD,61,Class 4
+75,,E078,85,Sm. Muscle,#F182BC,GI.DUO.SM.MUS,1,0,1,1,1,0,0,0,Duodenum Smooth Muscle,Duodenum_Smooth_Muscle,GI_DUODENUM,PrimaryTissue,BI,"59Y, 73Y",Male,SOLID,Caucasian,C,160;174_REMC_28,Class 5
+76,,E079,99,Digestive,#C58DAA,GI.ESO,-1,1,0,0,1,0,0,0,Esophagus,Esophagus,GI_ESOPHAGUS,PrimaryTissue,UCSD,34Y,Male,SOLID,Caucasian,SD,STL003,Class 2
+84,,E087,105,Other,#999999,PANC.ISLT,-1,1,0,0,1,0,0,0,Pancreatic Islets,Pancreatic_Islets,PANCREAS,PrimaryTissue,BI;UCSF-UBC,"Unknown, Unknown, 45Y",Male,SOLID,"Unknown, Unknown, Caucasian",C,pancreatic_islets_normal_0/0/00;pancreatic_islets_normal_3/27/09;ZD4_273,Class 4
+88,,E091,107,Other,#999999,PLCNT.FET,0,1,1,1,1,1,0,0,Placenta,Fetal_Placenta,PLACENTA,PrimaryTissue,UW,16GW,Female,SOLID,Unknown,SD,H-24996,Class 5
+91,,E094,100,Digestive,#C58DAA,GI.STMC.GAST,-1,1,0,0,1,0,0,0,Gastric,Gastric,GI_STOMACH,PrimaryTissue,UCSD,34Y,Male,SOLID,Caucasian,SD,STL003,Class 2
+92,,E095,82,Heart,#D56F80,HRT.VENT.L,1,1,1,0,1,0,0,0,Left Ventricle,Left_Ventricle,HEART,PrimaryTissue,UCSD,"3Y, 34Y",Male,SOLID,"Caucasian/African American, Caucasian",C,STL001;STL003,Class 2
+93,,E096,110,Other,#999999,LNG,-1,1,0,0,1,0,0,0,Lung,Lung,LUNG,PrimaryTissue,UCSD,30Y,Female,SOLID,Caucasian,SD,STL002,Class 2
+94,,E097,104,Other,#999999,OVRY,1,1,1,0,1,0,0,0,Ovary,Ovary,OVARY,PrimaryTissue,UCSD,30Y,Female,SOLID,Caucasian,SD,STL002,Class 2
+97,,E100,75,Muscle,#C2655D,MUS.PSOAS,-1,1,0,0,1,0,0,0,Psoas Muscle,Psoas_Muscle,MUSCLE,PrimaryTissue,UCSD,"3Y, 34Y",Male,SOLID,"Caucasian/African American, Caucasian",C,STL001;STL003,Class 2
+99,,E102,96,Digestive,#C58DAA,GI.RECT.MUC.31,1,0,1,0,1,0,0,0,Rectal Mucosa Donor 31,Rectal_Mucosa.Donor_31,GI_RECTUM,PrimaryTissue,BI,61Y,Female,SOLID,Caucasian,SD,31,Class 4
+100,,E103,87,Sm. Muscle,#F182BC,GI.RECT.SM.MUS,0,0,1,1,1,1,0,0,Rectal Smooth Muscle,Rectal_Smooth_Muscle,GI_RECTUM,PrimaryTissue,BI,50Y,Female,SOLID,Caucasian,SD,30,Class 5
+102,,E105,83,Heart,#D56F80,HRT.VNT.R,-1,1,0,0,1,0,0,0,Right Ventricle,Right_Ventricle,HEART,PrimaryTissue,UCSD,"3Y, 34Y",Male,SOLID,"Caucasian/African American, Caucasian",C,STL001;STL003,Class 2
+103,,E106,93,Digestive,#C58DAA,GI.CLN.SIG,1,1,1,0,1,0,0,0,Sigmoid Colon,Sigmoid_Colon,GI_COLON,PrimaryTissue,UCSD,"3Y, 34Y",Male,SOLID,"Caucasian/African American, Caucasian",C,STL001;STL003,Class 2
+104,,E107,77,Muscle,#C2655D,MUS.SKLT.M,1,0,1,0,0,0,0,0,Skeletal Muscle Male,Skeletal_Muscle_Male,MUSCLE,PrimaryTissue,BI,54Y,Male,SOLID,Caucasian,SD,63,Class 4
+105,,E108,76,Muscle,#C2655D,MUS.SKLT.F,1,0,1,0,1,0,0,0,Skeletal Muscle Female,Skeletal_Muscle_Female,MUSCLE,PrimaryTissue,BI,72Y,Female,SOLID,Caucasian,SD,62,Class 4
+106,,E109,92,Digestive,#C58DAA,GI.S.INT,-1,1,0,0,1,0,0,0,Small Intestine,Small_Intestine,GI_INTESTINE,PrimaryTissue,UCSD,"3Y, 34Y",Male,SOLID,"Caucasian/African American, Caucasian",C,STL001;STL003,Class 2
+108,,E111,88,Sm. Muscle,#F182BC,GI.STMC.MUS,0,0,1,1,1,1,0,0,Stomach Smooth Muscle,Stomach_Smooth_Muscle,GI_STOMACH,PrimaryTissue,BI,84Y,Female,SOLID,Caucasian,SD,28,Class 4
+109,,E112,62,Thymus,#DAB92E,THYM,0,1,1,0,1,0,0,0,Thymus,Thymus,THYMUS,PrimaryTissue,UCSD,3Y,Male,SOLID,Caucasian/African American,SD,STL001,Class 2
+113,,E116,114,ENCODE2012,#000000,BLD.GM12878,1,0,1,0,1,0,0,0,GM12878 Lymphoblastoid Cells,GM12878_Lymphoblastoid,BLOOD,PrimaryCulture,BI,,Female,,Caucasian,SD,GM12878,ENCODE
+116,,E119,117,ENCODE2012,#000000,BRST.HMEC,0,1,1,1,1,1,0,0,HMEC Mammary Epithelial Primary Cells,HMEC_Mammary_Epithelial,BREAST,PrimaryCulture,BI,,Unknown,,,SD,HMEC,ENCODE
+117,,E120,118,ENCODE2012,#000000,MUS.HSMM,0,1,1,1,1,1,0,0,HSMM Skeletal Muscle Myoblasts Cells,HSMM_Skeletal_Muscle_Myoblasts,MUSCLE,PrimaryCulture,BI,,Unknown,,,SD,HSMM,ENCODE
+118,,E121,119,ENCODE2012,#000000,MUS.HSMMT,1,1,1,1,1,1,0,0,HSMM cell derived Skeletal Muscle Myotubes Cells,HSMMtube_Skeletal_Muscle_Myotubes_Derived_from_HSMM,MUSCLE,PrimaryCulture,BI,,Unknown,,,SD,HSMMtube,ENCODE
+119,,E122,120,ENCODE2012,#000000,VAS.HUVEC,1,0,1,0,1,0,0,0,HUVEC Umbilical Vein Endothelial Primary Cells,HUVEC_Umbilical_Vein_Endothelial_Cells,VASCULAR,PrimaryCulture,BI,,Unknown,,,SD,HUVEC,ENCODE
+121,,E124,122,ENCODE2012,#000000,BLD.CD14.MONO,1,1,1,1,1,1,0,0,Monocytes-CD14+ RO01746 Primary Cells,Monocytes-CD14+_RO01746,BLOOD,PrimaryCell,BI,,Female,,,SD,RO01746,ENCODE
+122,,E125,123,ENCODE2012,#000000,BRN.NHA,1,1,1,1,1,1,0,0,NH-A Astrocytes Primary Cells,NH-A_Astrocytes,BRAIN,PrimaryCulture,BI,,Unknown,,,SD,NH-A,ENCODE
+123,,E126,124,ENCODE2012,#000000,SKIN.NHDFAD,1,1,1,1,1,1,0,0,NHDF-Ad Adult Dermal Fibroblast Primary Cells,NHDF-Ad_Adult_Dermal_Fibroblasts,SKIN,PrimaryCulture,BI,,Female,,,SD,NHDF-Ad,ENCODE
+124,,E127,125,ENCODE2012,#000000,SKIN.NHEK,0,1,1,1,1,1,0,0,NHEK-Epidermal Keratinocyte Primary Cells,NHEK-Epidermal_Keratinocytes,SKIN,PrimaryCulture,BI,,Unknown,,,SD,NHEK,ENCODE
+125,,E128,126,ENCODE2012,#000000,LNG.NHLF,0,1,1,1,1,1,0,0,NHLF Lung Fibroblast Primary Cells,NHLF_Lung_Fibroblasts,LUNG,PrimaryCulture,BI,,Unknown,,,SD,NHLF,ENCODE
+126,,E129,127,ENCODE2012,#000000,BONE.OSTEO,1,0,1,0,1,0,0,0,Osteoblast Primary Cells,Osteoblasts,BONE,PrimaryCulture,BI,,Unknown,,,SD,Osteobl,ENCODE
