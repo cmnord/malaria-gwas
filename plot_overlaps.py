@@ -4,9 +4,11 @@ import pandas as pd
 import matplotlib.patches as mpatches
 from matplotlib import pyplot as plt
 
-OUTPUT_DIR = 'graph_results/H3K4me1/{}'
+EPIGENOMIC_ANNOTATION = '4me1'
+
+OUTPUT_DIR = 'graph_results/H3K' + EPIGENOMIC_ANNOTATION + '/{}'
 FILTERED_CELL_TYPES_FILE = 'data/epigenomic_annotations/roadmap_metadata_filtered.tsv'
-OVERLAPS_DIR = 'data/overlaps/H3K4me1/{}'
+OVERLAPS_DIR = 'data/overlaps/H3K' + EPIGENOMIC_ANNOTATION + '/{}'
 ROADMAP_METADATA = 'data/epigenomic_annotations/roadmap_metadata.tsv'
 
 
@@ -241,6 +243,76 @@ def plot_malaria_cell_types(primary, background, blood, blood_back, meta):
     plt.savefig(OUTPUT_DIR.format(
         'All_Cell_Types_With_Enriched_Malaria_SNPs_normalized.png'))
 
+def plot_grouped_malaria_cell_types(primary, background, blood, blood_back, meta):
+    meta_cell_types = ['E000'] + list(meta['Epigenome ID (EID)'].values)
+    meta_groups = ['Erythrocytes (RBC)'] + list(meta['GROUP'].values)
+
+    counts1 = dict()
+    cell_types = primary['Cell Type'].values
+    filtered_cell_types = filter_cell_types(meta)
+    for i in range(len(cell_types)):
+        typ = cell_types[i]
+        if typ in filtered_cell_types:
+            group = meta_groups[meta_cell_types.index(typ)]
+            SNP = primary['SNP Name'][i]
+            if group in counts1.keys():
+                counts1[group].add(SNP)
+            else:
+                counts1[group] = set()
+                counts1[group].add(SNP)
+    for key in counts1.keys():
+        counts1[key] = len(counts1[key])
+    counts1['Erythrocytes (RBC)'] = len(blood['SNP Name'].values)
+
+    counts2 = dict()
+    cell_types = background['Cell Type'].values
+    for i in range(len(cell_types)):
+        typ = cell_types[i]
+        if typ in filtered_cell_types:
+            group = meta_groups[meta_cell_types.index(typ)]
+            SNP = background['SNP Name'][i]
+            if group in counts2.keys():
+                counts2[group].add(SNP)
+            else:
+                counts2[group] = set()
+                counts2[group].add(SNP)
+    for key in counts2.keys():
+        counts2[key] = len(counts2[key])
+    counts2['Erythrocytes (RBC)'] = len(blood_back['SNP Name'].values)
+
+    mix = dict()
+    for key in counts1.keys():
+        mix[key] = float(counts1[key])/float(counts1[key]+counts2[key])
+
+    x_vals = list(mix.keys())
+    # x_vals.sort(key=lambda group: mix[group]) # sort by number of snps
+    x_vals.sort() # sort by name
+    y_vals = [mix[key] for key in x_vals]
+    plt.figure(figsize=(15, 20))
+
+    plt.barh(list(reversed(range(len(y_vals)))), y_vals, color=[
+             'blue' if x == 'Liver' else 'red' if x == 'Erythrocytes (RBC)' else meta['COLOR'][meta_groups.index(x)] for x in x_vals], tick_label=x_vals)
+
+    # colors = dict()
+    # for i in range(3, len(meta_cell_types)):
+    #     if meta['COLOR'][i] in colors.keys():
+    #         continue
+    #     else:
+    #         colors[meta['COLOR'][i]] = meta['GROUP'][i]
+
+    # plt.legend(handles=[mpatches.Patch(color='red', label='Erythrocytes (RBC)'), mpatches.Patch(
+    #     color='blue', label='Liver')] + [mpatches.Patch(color=key, label=colors[key]) for key in colors.keys()], loc=1)
+
+    # for i, v in enumerate(reversed(y_vals)):
+    #     plt.text(v, i, ' ' + str(v), color='black', va='center', fontweight='bold')
+
+    plt.ylabel('Cell Types', fontsize=15)
+    plt.xlabel('Percent Malaria SNPs of All SNPs in Enriched Regions', fontsize=15)
+    plt.title('Cell Types With Enriched Malaria SNPs', fontsize=20)
+
+    # plt.show()
+    plt.savefig(OUTPUT_DIR.format(
+        'All_Cell_Type_Groups_With_Enriched_Malaria_SNPs_normalized.png'))
 
 def main():
     acetylation_cols = ['Cell Type', 'Chromosome',
@@ -263,7 +335,7 @@ def main():
 
     p_meta = create_df(ROADMAP_METADATA)
     # finding how many enriched malaria SNPs (out of all enriched SNPs) are in each cell type
-    plot_malaria_cell_types(primary, back, blood, blood_back, p_meta)
+    plot_grouped_malaria_cell_types(primary, back, blood, blood_back, p_meta)
 
 
 if __name__ == '__main__':
