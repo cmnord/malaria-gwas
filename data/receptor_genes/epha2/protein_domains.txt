@@ -46,7 +46,7 @@ gorilla_gorilla
 		<Region from="26" to="501" loc="O"/>
 		<Region from="502" to="517" loc="M"/>
 		<Region from="518" to="936" loc="I"/>
-colobus_angolensis
+colobus_angolensis_palliatus
 	<Topology numTM="1" reliability="99.5636">
 		<Region from="1" to="23" loc="S"/>
 		<Region from="24" to="542" loc="O"/>
