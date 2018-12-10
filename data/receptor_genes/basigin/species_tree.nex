@@ -1,0 +1,10 @@
+#NEXUS
+
+BEGIN TAXA;
+	DIMENSIONS ntax=20;
+	TAXLABELS  homo_sapiens pongo_abelii pan_troglodytes pan_paniscus gorilla_gorilla rhinopithecus_roxellana rhinopithecus_bieti chlorocebus_sabaeus colobus_angolensis mandrillus_leucophaeus theropithecus_gelada papio_anubis macaca_mulatta macaca_fascicularis cercocebus_atys aotus_nancymaae aotus_trivirgatus saimiri_boliviensis callithrix_jacchus galeopterus_variegatus;
+END;
+
+BEGIN TREES;
+	TREE tree_1 = ((((((homo_sapiens:4,pongo_abelii:4,(pan_troglodytes:4,pan_paniscus:4)pan:4,gorilla_gorilla:4)hominidae:4,((rhinopithecus_roxellana:4,rhinopithecus_bieti:4)rhinopithecus:4,chlorocebus_sabaeus:4,colobus_angolensis:4,mandrillus_leucophaeus:4,theropithecus_gelada:4,papio_anubis:4,(macaca_mulatta:4,macaca_fascicularis:4)macaca:4,cercocebus_atys:4)cercopithecidae:4,(aotus_nancymaae:4,aotus_trivirgatus:4)aotus:4,(saimiri_boliviensis:4,callithrix_jacchus:4)cebidae:4)primates:4)mammalia:4)dermoptera:4)cynocephalidae:4,galeopterus_variegatus:4)galeopterus;
+END;
