@@ -253,7 +253,11 @@ def plot_grouped_malaria_cell_types(primary, background, blood, blood_back, meta
     for i in range(len(cell_types)):
         typ = cell_types[i]
         if typ in filtered_cell_types:
-            group = meta_groups[meta_cell_types.index(typ)]
+            group = ''
+            if typ == 'E066':
+                group = 'Liver'
+            else:
+                group = meta_groups[meta_cell_types.index(typ)]
             SNP = primary['SNP Name'][i]
             if group in counts1.keys():
                 counts1[group].add(SNP)
@@ -269,7 +273,11 @@ def plot_grouped_malaria_cell_types(primary, background, blood, blood_back, meta
     for i in range(len(cell_types)):
         typ = cell_types[i]
         if typ in filtered_cell_types:
-            group = meta_groups[meta_cell_types.index(typ)]
+            group = ''
+            if typ == 'E066':
+                group = 'Liver'
+            else:
+                group = meta_groups[meta_cell_types.index(typ)]
             SNP = background['SNP Name'][i]
             if group in counts2.keys():
                 counts2[group].add(SNP)
@@ -282,15 +290,16 @@ def plot_grouped_malaria_cell_types(primary, background, blood, blood_back, meta
 
     mix = dict()
     for key in counts1.keys():
-        mix[key] = float(counts1[key])/float(counts1[key]+counts2[key])
+        #mix[key] = float(counts1[key])/float(counts1[key]+counts2[key]) # Normalization
+        mix[key] = float(counts1[key]) # No Normalization
 
     x_vals = list(mix.keys())
     # x_vals.sort(key=lambda group: mix[group]) # sort by number of snps
     x_vals.sort() # sort by name
     y_vals = [mix[key] for key in x_vals]
-    plt.figure(figsize=(15, 20))
+    plt.figure(figsize=(20, 13))
 
-    plt.barh(list(reversed(range(len(y_vals)))), y_vals, color=[
+    plt.bar(list(reversed(range(len(y_vals)))), y_vals, color=[
              'blue' if x == 'Liver' else 'red' if x == 'Erythrocytes (RBC)' else meta['COLOR'][meta_groups.index(x)] for x in x_vals], tick_label=x_vals)
 
     # colors = dict()
@@ -306,13 +315,14 @@ def plot_grouped_malaria_cell_types(primary, background, blood, blood_back, meta
     # for i, v in enumerate(reversed(y_vals)):
     #     plt.text(v, i, ' ' + str(v), color='black', va='center', fontweight='bold')
 
-    plt.ylabel('Cell Types', fontsize=15)
-    plt.xlabel('Percent Malaria SNPs of All SNPs in Enriched Regions', fontsize=15)
+    plt.xlabel('Cell Types', fontsize=15)
+    plt.ylabel('Number of Malaria SNPs in Enriched Regions', fontsize=15)
     plt.title('Cell Types With Enriched Malaria SNPs', fontsize=20)
+    plt.xticks(rotation=45)
 
     # plt.show()
     plt.savefig(OUTPUT_DIR.format(
-        'All_Cell_Type_Groups_With_Enriched_Malaria_SNPs_normalized.png'))
+        'All_Cell_Type_Groups_With_Enriched_Malaria_SNPs.png'))
 
 def main():
     acetylation_cols = ['Cell Type', 'Chromosome',
