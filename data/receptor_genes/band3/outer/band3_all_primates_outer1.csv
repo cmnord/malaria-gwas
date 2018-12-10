@@ -1,5 +1,5 @@
 ,band3_outer1_7R,band3_outer1_7G,band3_outer1_10I,band3_outer1_10M,Species
-pilicolobus_tephrosceles,0,1,1,0,resistant
+piliocolobus_tephrosceles,0,1,1,0,resistant
 rhinopithecus_roxellana,0,1,1,0,resistant
 homo_sapiens,1,0,0,1,infected
 cebus_capucinus,1,0,0,1,resistant

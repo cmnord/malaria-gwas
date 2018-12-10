@@ -346,7 +346,7 @@ papio_anubis
 		<Region from="804" to="844" loc="I"/>
 		<Region from="845" to="863" loc="L"/>
 		<Region from="864" to="914" loc="I"/>
-pilicolobus_tephrosceles
+piliocolobus_tephrosceles
 	<Topology numTM="12" reliability="87.7989">
 		<Region from="1" to="413" loc="I"/>
 		<Region from="414" to="429" loc="M"/>
